@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chiarella Bencan Cordero — Portal Profesional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0A; --bg2:#161616; --ink:#EDEFF3; --ink-dim:#A6A6A6;
+    --gold:#C9A24B; --blue:#5B7A99; --line:#ffffff1c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:'Source Sans 3',sans-serif; line-height:1.5;}
+  h1,h2,h3,h4{font-family:'Libre Franklin',sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  header{position:sticky; top:0; background:rgba(10,10,10,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); z-index:50;}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; gap:12px;}
+  .brand{font-weight:800; font-size:15px; letter-spacing:.04em; white-space:nowrap;}
+  .navlinks{display:flex; gap:16px; overflow-x:auto; scrollbar-width:none; font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{color:var(--ink-dim); text-decoration:none; white-space:nowrap; padding-bottom:2px; border-bottom:2px solid transparent;}
+  .navlinks a:hover{color:var(--gold); border-color:var(--gold);}
+
+  /* HERO */
+  .hero{padding:64px 0 48px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 220px; gap:32px; align-items:start;}
+  .hero-photo{width:220px; height:270px; border:1px solid var(--gold); padding:8px;}
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(15%);}
+  .eyebrow{font-weight:800; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+  h1.title{font-weight:800; font-size:34px; text-transform:uppercase; line-height:1.2; letter-spacing:-.01em; max-width:600px;}
+  .hero p{font-size:15px; color:var(--ink-dim); max-width:500px; margin-top:18px;}
+  .rule{height:1px; background:var(--gold); width:56px; margin:24px 0;}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
+  .chips span{font-size:11px; border:1px solid var(--line); padding:6px 12px; border-radius:100px; color:var(--ink-dim);}
+
+  /* SECTION SHARED */
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  .sec-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px; gap:16px;}
+  .sec-num{font-weight:800; font-size:11px; letter-spacing:.16em; color:var(--gold); text-transform:uppercase; margin-bottom:8px;}
+  .sec-head h2{font-size:24px; font-weight:800; text-transform:uppercase;}
+  .sec-note{font-size:12px; color:var(--ink-dim); max-width:220px; text-align:right;}
+
+  /* TRAYECTORIA */
+  .timeline{display:flex; flex-direction:column; gap:0;}
+  .tl-item{display:grid; grid-template-columns:90px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--line);}
+  .tl-item:first-child{border-top:none;}
+  .tl-date{font-weight:800; font-size:12px; color:var(--gold); letter-spacing:.05em;}
+  .tl-item h3{font-size:16px; font-weight:600; margin-bottom:6px;}
+  .tl-item .role{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:.04em;}
+  .tl-item p{font-size:13.5px; color:var(--ink-dim);}
+
+  /* GRID CARDS */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .card{background:var(--bg); padding:22px;}
+  .card h3{font-size:14.5px; font-weight:600; margin-bottom:8px;}
+  .card p{font-size:12.5px; color:var(--ink-dim);}
+  .tag-mini{font-weight:800; font-size:10.5px; letter-spacing:.1em; color:var(--gold); text-transform:uppercase; margin-bottom:10px; display:block;}
+
+  /* PLACEHOLDER CARD */
+  .placeholder{border:1px dashed var(--line); background:var(--bg2); display:flex; align-items:center; justify-content:center; min-height:120px; padding:20px; text-align:center;}
+  .placeholder span{font-size:12px; color:var(--ink-dim);}
+
+  /* SUBHEAD */
+  .subhead{font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin:36px 0 16px;}
+  .subhead:first-of-type{margin-top:0;}
+
+  /* DOCUMENTOS */
+  .doclist{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .doc{background:var(--bg); display:flex; justify-content:space-between; align-items:center; padding:16px 20px; text-decoration:none;}
+  .doc:hover{background:var(--bg2);}
+  .doc span.name{font-size:13.5px; font-weight:600;}
+  .doc span.meta{font-size:11px; color:var(--ink-dim);}
+  .doc .arrow{color:var(--gold); font-weight:800;}
+
+  .note{border:1px solid var(--line); background:var(--bg2); padding:18px 22px; font-size:13px; color:var(--ink-dim); margin-top:1px;}
+  .note b{color:var(--ink);}
+
+  footer{padding:40px 24px; text-align:center; font-size:12px; color:var(--ink-dim);}
+  footer a{color:var(--gold); text-decoration:none;}
+
+  @media(max-width:640px){
+    .grid2,.grid3{grid-template-columns:1fr;}
+    h1.title{font-size:27px;}
+    .tl-item{grid-template-columns:1fr; gap:6px;}
+    .hero{grid-template-columns:1fr;}
+    .hero-photo{width:160px; height:200px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">C. BENCAN CORDERO</div>
+      <div class="navlinks">
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#articulos">Artículos</a>
+        <a href="#voluntariado">Voluntariado</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#redes">Redes</a>
+        <a href="#documentos">Documentos</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="hero wrap">
+  <div>
+    <div class="eyebrow">Portal Profesional — Madrid, España</div>
+    <h1 class="title">Liderazgo tecnológico con visión de negocio</h1>
+    <p>Chief Digital Officer en WOBI. Quince años construyendo puentes entre tecnología, personas y resultados en América y Europa. Este es mi recorrido, contado como lo cuento en una entrevista — no como se lee en un CV.</p>
+    <div class="rule"></div>
+    <div class="chips">
+      <span>C-Level Internacional</span>
+      <span>Transformación Digital</span>
+      <span>Producto &amp; Tecnología</span>
+      <span>Doble nacionalidad PE / ES</span>
+    </div>
+  </div>
+  <div class="hero-photo"><img src="hero-photo.jpeg" alt="Chiarella Bencan Cordero"></div>
+</div>
+
+<!-- TRAYECTORIA -->
+<section id="trayectoria">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">01 — El recorrido</div>
+        <h2>Trayectoria</h2>
+      </div>
+      <div class="sec-note">Contada en primera persona, no como lista de cargos.</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2022 — hoy</div>
+        <div>
+          <div class="role">CDO · WOBI — World Business Forum</div>
+          <h3>Reconstruir un negocio digital desde adentro</h3>
+          <p>Llegué a WOBI para liderar su ecosistema digital de e-learning y terminé involucrada en absolutamente todo: tecnología, contenido, speakers, y ahora un proceso de M&amp;A de más de 18 meses. Soy host del World Business Forum — compartir escenario con líderes globales de management es parte de mi día a día.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2020 — 2022</div>
+        <div>
+          <div class="role">CIO · Gerdau–SIDERPERU</div>
+          <h3>Crear un área de innovación desde cero</h3>
+          <p>Construí el área de Innovación y Transformación Digital de la planta, lideré un equipo de más de 20 personas y llevamos adelante más de 30 pilotos de innovación en dos años. Uno de ellos, en 2021, fue un proyecto de IA para predecir picos de energía en planta — antes de que "IA" fuera la palabra de moda.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2015 — 2019</div>
+        <div>
+          <div class="role">Oracle — Ventas y Preventa de Aplicaciones</div>
+          <h3>Del lado del proveedor</h3>
+          <p>Pasé de consultora de preventa a directora de ventas de aplicaciones. Ahí aprendí a traducir tecnología compleja en valor de negocio, y a construir relaciones de largo plazo con clientes — una base que uso todos los días como ejecutiva del lado del cliente.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2013 — 2015</div>
+        <div>
+          <div class="role">LogFire → adquirida por Oracle · Alicorp</div>
+          <h3>Los primeros proyectos reales</h3>
+          <p>En LogFire lideré proyectos de tecnología para cadena de suministro — la empresa fue adquirida por Oracle poco después, mi primer M&amp;A. En paralelo, en Alicorp gestioné el portafolio tecnológico del área comercial de una de las FMCG más grandes de Perú.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">02 — Lo que construyo</div>
+        <h2>Proyectos</h2>
+      </div>
+      <div class="sec-note">Sin datos confidenciales de clientes ni empleadores.</div>
+    </div>
+
+    <div class="subhead">En mis trabajos</div>
+    <div class="grid2">
+      <div class="card"><span class="tag-mini">WOBI</span><h3>Digitalización del área comercial</h3><p>Lanzamiento de modelos de suscripción y nuevas plataformas de e-learning.</p></div>
+      <div class="card"><span class="tag-mini">Gerdau–SIDERPERU</span><h3>13 proyectos de transformación digital</h3><p>Impacto estimado en EBITDA de +USD 10M a 5 años, con 10 prototipos desarrollados.</p></div>
+    </div>
+
+    <div class="subhead">En construcción ahora</div>
+    <div class="grid2">
+      <div class="placeholder"><span>📚 Portal de libros — agregar descripción y link cuando esté listo</span></div>
+      <div class="placeholder"><span>🌐 Este mismo portal profesional</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">03 — Momentos</div>
+        <h2>Galería</h2>
+      </div>
+      <div class="sec-note">WOBI, World Business Forum y las personas en el camino.</div>
+    </div>
+    <div class="grid3">
+      <div class="placeholder"><span>Foto — hosting WBF</span></div>
+      <div class="placeholder"><span>Foto — con speaker</span></div>
+      <div class="placeholder"><span>Foto — evento WOBI</span></div>
+      <div class="placeholder"><span>Foto — backstage</span></div>
+      <div class="placeholder"><span>Foto — equipo</span></div>
+      <div class="placeholder"><span>+ Agregar más</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTECA -->
+<section id="biblioteca">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">04 — Lecturas</div>
+        <h2>Biblioteca</h2>
+      </div>
+      <div class="sec-note">Libros de negocio, organizados por categoría, con resumen propio.</div>
+    </div>
+
+    <div class="subhead">Liderazgo</div>
+    <div class="grid3">
+      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
+    </div>
+    <div class="subhead">Estrategia &amp; Producto</div>
+    <div class="grid3">
+      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
+    </div>
+    <div class="subhead">Tecnología &amp; IA</div>
+    <div class="grid3">
+      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICULOS -->
+<section id="articulos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">05 — En mis palabras</div>
+        <h2>Artículos</h2>
+      </div>
+      <div class="sec-note">Posteados originalmente en LinkedIn.</div>
+    </div>
+    <div class="grid2">
+      <div class="placeholder"><span>+ Agregar artículo (título, fecha, link a LinkedIn)</span></div>
+      <div class="placeholder"><span>+ Agregar artículo (título, fecha, link a LinkedIn)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTARIADO -->
+<section id="voluntariado">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">06 — Más allá del cargo</div>
+        <h2>Voluntariado</h2>
+      </div>
+      <div class="sec-note">&nbsp;</div>
+    </div>
+    <div class="grid2">
+      <div class="card"><span class="tag-mini">Cruz Roja Española</span><h3>Trabajo con niños de 6 a 16 años</h3><p>Voluntaria activa en programas comunitarios.</p></div>
+      <div class="card"><span class="tag-mini">Fundación Peruana de Cáncer</span><h3>Voluntariado social</h3><p>Apoyo a la fundación en Perú.</p></div>
+      <div class="card"><span class="tag-mini">SIDERPERU</span><h3>Mentoría de estudiantes y gerentes</h3><p>Desarrollo profesional dentro del programa de mentoría de la empresa.</p></div>
+      <div class="card"><span class="tag-mini">Women in Tech</span><h3>Mentora de mujeres en STEM</h3><p>Acompañamiento de carrera para mujeres en tecnología.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">07 — Fuera de la oficina</div>
+        <h2>Hobbies e intereses</h2>
+      </div>
+      <div class="sec-note">&nbsp;</div>
+    </div>
+
+    <div class="subhead">Fun facts</div>
+    <div class="grid3">
+      <div class="card"><span class="tag-mini">Lectura</span><h3>Fan de Tolkien</h3><p>El Señor de los Anillos, en su versión más completa posible.</p></div>
+      <div class="card"><span class="tag-mini">Tech</span><h3>Early adopter</h3><p>Beta tester de Apple desde 2013 — siempre entre los primeros probando lo nuevo.</p></div>
+      <div class="card"><span class="tag-mini">Trivia</span><h3>Me sé todas las capitales del mundo</h3><p>Un dato random que sorprende en cualquier conversación.</p></div>
+      <div class="card"><span class="tag-mini">Productividad</span><h3>Rutina de mañanas</h3><p>+ Agregar detalle de la rutina</p></div>
+      <div class="card"><span class="tag-mini">Tech</span><h3>Hago mis propios Shortcuts de Apple</h3><p>Automatizo mi día a día con atajos propios en el ecosistema Apple.</p></div>
+      <div class="placeholder"><span>+ Agregar otro fun fact</span></div>
+    </div>
+
+    <div class="subhead">Deporte &amp; hobbies</div>
+    <div class="grid3">
+      <div class="placeholder"><span>+ Agregar deporte o actividad</span></div>
+      <div class="placeholder"><span>+ Agregar hobby</span></div>
+      <div class="placeholder"><span>+ Agregar interés</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REDES SOCIALES -->
+<section id="redes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">08 — Dónde encontrarme</div>
+        <h2>Redes sociales</h2>
+      </div>
+      <div class="sec-note">&nbsp;</div>
+    </div>
+    <div class="grid2">
+      <div class="card"><span class="tag-mini">Activa</span><h3>LinkedIn</h3><p>Mi canal principal — ahí posteo, respondo y conecto.</p></div>
+      <div class="card"><span class="tag-mini">Inactiva</span><h3>Instagram</h3><p>No la tengo instalada hace 6 meses.</p></div>
+      <div class="card"><span class="tag-mini">Inactiva</span><h3>Facebook</h3><p>Sin uso desde hace más de 5 años.</p></div>
+      <div class="card"><span class="tag-mini">Nunca usada</span><h3>TikTok</h3><p>Nunca tuve cuenta ahí.</p></div>
+    </div>
+    <div class="note">Disclosure honesto: si me escriben por Instagram o Facebook, probablemente no lo vea — no es nada personal, esas apps simplemente no están en mi día a día. LinkedIn es el lugar donde sí estoy.</div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section id="documentos" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">09 — Respaldo formal</div>
+        <h2>Documentos</h2>
+      </div>
+      <div class="sec-note">CV, cartas de presentación y diplomas.</div>
+    </div>
+    <div class="doclist">
+      <a class="doc" href="CV_Chiarella_Bencan_ENG.pdf" target="_blank"><span class="name">CV — Versión en inglés (PDF)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="CV_Chiarella_Bencan_ESP.pdf" target="_blank"><span class="name">CV — Versión en español (PDF)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="Carta_Presentacion_Generica_Chiarella_Bencan.docx" target="_blank"><span class="name">Carta de presentación (DOCX)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="Diplomas_y_certificados_Chiarella_Bencan.pdf" target="_blank"><span class="name">Diplomas y certificados (PDF)</span><span class="arrow">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Chiarella Bencan Cordero — Madrid, España<br>
+  <a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a> ·
+  <a href="https://www.linkedin.com/in/chiarellabencan" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
