@@ -54,6 +54,69 @@
   .tl-item .role{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:.04em;}
   .tl-item p{font-size:13.5px; color:var(--ink-dim);}
 
+  .speakers-featured{margin-top:10px; color:var(--ink) !important; font-weight:500;}
+  details.speakers{margin-top:14px;}
+  details.speakers summary{cursor:pointer; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; list-style:none;}
+  details.speakers summary::-webkit-details-marker{display:none;}
+  details.speakers summary::after{content:" +";}
+  details.speakers[open] summary::after{content:" −";}
+  details.speakers ul{list-style:none; columns:3; column-gap:24px; margin-top:16px; font-size:12.5px; color:var(--ink-dim);}
+  details.speakers li{padding:3px 0; break-inside:avoid;}
+
+
+  .card a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);}
+  .card.compact{padding:18px 22px;}
+  .card.compact h3{margin-bottom:0;}
+  .booklist{list-style:none; margin-top:12px;}
+  .booklist li{font-size:13px; color:var(--ink-dim); padding:7px 0; border-top:1px solid var(--line);}
+  .booklist li:first-child{border-top:none;}
+  .booklist li b{color:var(--ink); font-weight:600;}
+  .cat-title{font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold);}
+
+
+  .art-list{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .art{background:var(--bg); display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 20px; text-decoration:none;}
+  .art:hover{background:var(--bg2);}
+  .art .t{font-size:14px; font-weight:600; color:var(--ink);}
+  .art .lang{font-size:10px; font-weight:800; letter-spacing:.1em; color:var(--blue); border:1px solid var(--line); padding:3px 8px; border-radius:100px; margin-left:10px; white-space:nowrap;}
+  .art .arrow{color:var(--gold); font-weight:800;}
+  .all-link{display:inline-block; margin-top:20px; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold);}
+
+
+  .sumlinks{margin-top:12px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;}
+  .sumlinks a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); margin-right:14px;}
+  .sumcard h3{font-size:15px;}
+  .sumcard .by{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px;}
+
+
+  .gal{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .tile{position:relative; display:block; padding:0; border:1px solid var(--line); background:var(--bg2); cursor:zoom-in; overflow:hidden; aspect-ratio:4/3; font:inherit; color:inherit;}
+  .tile img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease, filter .35s ease; filter:grayscale(10%);}
+  .tile:hover img{transform:scale(1.04); filter:none;}
+  .tile.top img{object-position:center 18%;}
+  .tile .cap{position:absolute; left:0; right:0; bottom:0; padding:28px 12px 10px; font-size:12px; line-height:1.35; color:#fff; text-align:left; background:linear-gradient(transparent, rgba(0,0,0,.82));}
+  .lb{position:fixed; inset:0; background:rgba(0,0,0,.92); display:none; align-items:center; justify-content:center; flex-direction:column; z-index:100; padding:24px;}
+  .lb.open{display:flex;}
+  .lb img{max-width:100%; max-height:78vh; object-fit:contain; border:1px solid var(--line);}
+  .lb .lbcap{margin-top:14px; font-size:13.5px; color:var(--ink); max-width:720px; text-align:center;}
+  .lb button{position:absolute; background:none; border:none; color:var(--gold); font-size:30px; cursor:pointer; padding:12px; line-height:1;}
+  .lb .x{top:10px; right:14px;} .lb .p{left:8px; top:50%;} .lb .n{right:8px; top:50%;}
+  @media(max-width:640px){ .gal{grid-template-columns:1fr 1fr;} .tile .cap{font-size:11px; padding:20px 8px 8px;} }
+
+
+  .badge{display:inline-block; margin-left:8px; padding:2px 8px; border:1px solid var(--gold); border-radius:100px; font-size:9.5px; letter-spacing:.1em; color:var(--gold);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .row5{grid-template-columns:repeat(5,1fr);}
+  .row5 .tile{aspect-ratio:1/1;}
+  .row5 .tile .cap{font-size:10.5px; padding:18px 6px 6px;}
+  .more{margin-top:18px;}
+  .span2{grid-column:span 2;}
+  .tile .cap b{display:block; font-weight:800; font-size:12.5px;}
+  .dipl .card h3{margin-bottom:4px;}
+  .dipl .card .by{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px;}
+  .backlink{display:inline-block; margin-bottom:24px; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold);}
+  .intro{font-size:13px; color:var(--ink-dim); margin:-4px 0 16px; max-width:640px;}
+
   /* GRID CARDS */
   .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
   .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
@@ -86,9 +149,15 @@
 
   @media(max-width:640px){
     .grid2,.grid3{grid-template-columns:1fr;}
+    .g4{grid-template-columns:1fr 1fr;}
+    .row3,.row5{display:flex; overflow-x:auto; gap:8px; grid-template-columns:none;}
+    .row5 .tile{flex:0 0 160px;}
+    .row3 .tile{flex:0 0 230px;}
+    .span2{grid-column:auto;}
     h1.title{font-size:27px;}
     .tl-item{grid-template-columns:1fr; gap:6px;}
     .hero{grid-template-columns:1fr;}
+    details.speakers ul{columns:1;}
     .hero-photo{width:160px; height:200px;}
   }
 </style>
@@ -101,6 +170,8 @@
       <div class="brand">C. BENCAN CORDERO</div>
       <div class="navlinks">
         <a href="#trayectoria">Trayectoria</a>
+        <a href="#documentos">Documentos</a>
+        <a href="#diplomas">Diplomas</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#galeria">Galería</a>
         <a href="#biblioteca">Biblioteca</a>
@@ -108,7 +179,6 @@
         <a href="#voluntariado">Voluntariado</a>
         <a href="#hobbies">Hobbies</a>
         <a href="#redes">Redes</a>
-        <a href="#documentos">Documentos</a>
       </div>
     </nav>
   </div>
@@ -116,15 +186,15 @@
 
 <div class="hero wrap">
   <div>
-    <div class="eyebrow">Portal Profesional — Madrid, España</div>
-    <h1 class="title">Liderazgo tecnológico con visión de negocio</h1>
-    <p>Chief Digital Officer en WOBI. Quince años construyendo puentes entre tecnología, personas y resultados en América y Europa. Este es mi recorrido, contado como lo cuento en una entrevista — no como se lee en un CV.</p>
+    <div class="eyebrow">Portal Profesional — Chamberí, Madrid</div>
+    <h1 class="title">Conectando Ideas, Tecnología e Impacto en el Negocio</h1>
+    <p>Quince años construyendo puentes entre tecnología, personas y resultados en América y Europa. Este es mi recorrido, contado como lo cuento en una entrevista — no como se lee en un CV.</p>
     <div class="rule"></div>
     <div class="chips">
       <span>C-Level Internacional</span>
+      <span>Innovación &amp; Proyectos</span>
       <span>Transformación Digital</span>
       <span>Producto &amp; Tecnología</span>
-      <span>Doble nacionalidad PE / ES</span>
     </div>
   </div>
   <div class="hero-photo"><img src="hero-photo.jpeg" alt="Chiarella Bencan Cordero"></div>
@@ -146,7 +216,37 @@
         <div>
           <div class="role">CDO · WOBI — World Business Forum</div>
           <h3>Reconstruir un negocio digital desde adentro</h3>
-          <p>Llegué a WOBI para liderar su ecosistema digital de e-learning y terminé involucrada en absolutamente todo: tecnología, contenido, speakers, y ahora un proceso de M&amp;A de más de 18 meses. Soy host del World Business Forum — compartir escenario con líderes globales de management es parte de mi día a día.</p>
+          <p>Llegué a WOBI para liderar el ecosistema digital de e-learning y terminé involucrada en muchísimas cosas: proyectos de tecnología, creación de contenido, contratación y relación con speakers - incluso he sido host del World Business Forum en varias ocasiones. He tenido el privilegio de compartir escenario con líderes globales de management como:</p>
+          <p class="speakers-featured">Amal Clooney · Amy Edmondson · Andre Agassi · Brené Brown · Carl Lewis · Daniel Goleman · Francis Ford Coppola · Michael Phelps · Peter Diamandis · Scott Galloway · Vijay Govindarajan</p>
+          <details class="speakers">
+            <summary>Ver la lista completa de speakers</summary>
+            <ul>
+              <li>Adriana Arismendi</li><li>Alex Rovira</li><li>Alex Tapscott</li><li>Allyson Felix</li><li>Alondra De la Parra</li>
+              <li>Amal Clooney</li><li>Amy Cuddy</li><li>Amy Edmondson</li><li>Amy Gallo</li><li>Andre Agassi</li>
+              <li>Andrew McAfee</li><li>Angela Ahrendts</li><li>Anne Chow (AT&amp;T)</li><li>Ayanna Howard (NASA)</li><li>Barney Tan</li>
+              <li>Bebe Vio</li><li>Bill George</li><li>Brené Brown</li><li>Carl Lewis</li><li>Carla Harris</li>
+              <li>Carly Fiorina (HP)</li><li>Catherine Ball</li><li>Charles Duhigg</li><li>Chris Barton (Shazam)</li><li>Chris Gardner</li>
+              <li>Daniel Goleman</li><li>Daniel Lamarre (Cirque du Soleil)</li><li>Darren Shand (All Blacks)</li><li>David Bell</li><li>David Rowan</li>
+              <li>Efren Martinez</li><li>Elizabeth Dunn</li><li>Erin Meyer</li><li>Ethan Kross</li><li>Federica Pellegrini</li>
+              <li>Felipe Gomez</li><li>Francesca Gino</li><li>Francis Ford Coppola</li><li>Gary Hamel</li><li>Gen. David Petraeus</li>
+              <li>Ginni Rometty</li><li>Giuseppe Stigliano</li><li>Greg Hoffman (Nike)</li><li>Guy Kawasaki</li><li>Hila Lifshitz-Asaf</li>
+              <li>Ignacio Martinez Mendizabal</li><li>Indra Nooyi</li><li>Inma Shara</li><li>James Cameron</li><li>James Clear</li>
+              <li>James Patterson</li><li>Jason Wild</li><li>Javier Fernandez Aguado</li><li>Jean Oelwang (Virgin Unite)</li><li>Jennifer A. Chatman</li>
+              <li>Jesus Cochegrus</li><li>Jim Collins</li><li>Jon McNeill</li><li>Justin Trudeau</li><li>Keith Ferrazzi</li>
+              <li>Kevin Roberts</li><li>Lisa McCallum</li><li>Lisa McKnight</li><li>Liz Wiseman</li><li>Lorena Ochoa</li>
+              <li>Luis Huete</li><li>Magnus</li><li>Malcolm Gladwell</li><li>Marco Bertini</li><li>Marcus Collins</li>
+              <li>Mario Draghi</li><li>Mark Roberge</li><li>Marshall Goldsmith</li><li>Mary Murphy</li><li>Matthew Barzun</li>
+              <li>Michael Phelps</li><li>Mitchell Weiss</li><li>Modupe Akinola</li><li>Molly Fletcher</li><li>Muhammad Yunus</li>
+              <li>Natalie Nahai</li><li>Nouriel Roubini</li><li>Omar Johnson</li><li>Paola Antonelli</li><li>Patrick Leddin</li>
+              <li>Peter Diamandis</li><li>Peter Docker</li><li>Peter Weill</li><li>Peter Wilton</li><li>Pilar Jericó</li>
+              <li>Rachel Botsman</li><li>Radhika Dirks</li><li>Randi Zuckerberg</li><li>Reid Blackman</li><li>Renee Mauborgne</li>
+              <li>Renee Richardson Gosline</li><li>Rich Sheridan</li><li>Richard Boyatzis</li><li>Richard Hall</li><li>Rigoberto Uran</li>
+              <li>Rita McGrath</li><li>Scott Anthony</li><li>Scott Galloway</li><li>Sergio Scariolo</li><li>Seth Godin</li>
+              <li>Sharon Melnick</li><li>Simon Sinek</li><li>Simone Biles</li><li>Stephen M.R. Covey</li><li>Steve Vamos</li>
+              <li>Teresa Perales</li><li>Tom Davenport</li><li>Tony Fadell</li><li>Tricia Wang</li><li>Uri Levine</li>
+              <li>Vijay Govindarajan</li><li>Welby Altidor</li><li>Will Guidara</li><li>William Ury</li><li>Zack Kass</li>
+            </ul>
+          </details>
         </div>
       </div>
       <div class="tl-item">
@@ -177,12 +277,51 @@
   </div>
 </section>
 
+<!-- DOCUMENTOS -->
+<section id="documentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">02 — Respaldo formal</div>
+        <h2>Documentos</h2>
+      </div>
+      <div class="sec-note">CV y carta de presentación.</div>
+    </div>
+    <div class="doclist">
+      <a class="doc" href="CV_Chiarella_Bencan_ENG.pdf" target="_blank"><span class="name">CV — Versión en inglés (PDF)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="CV_Chiarella_Bencan_ESP.pdf" target="_blank"><span class="name">CV — Versión en español (PDF)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="Carta_Presentacion_Generica_Chiarella_Bencan.docx" target="_blank"><span class="name">Carta de presentación (DOCX)</span><span class="arrow">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DIPLOMAS -->
+<section id="diplomas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">03 — Formación</div>
+        <h2>Diplomas</h2>
+      </div>
+      <div class="sec-note">Cada tarjeta lleva directo al certificado.</div>
+    </div>
+    <div class="grid2 dipl">
+      <div class="card"><span class="tag-mini">Formación universitaria</span><h3>Ingeniero Industrial</h3><div class="by">Universidad de Lima · Título expedido en 2015</div><p>Ingeniería Industrial (estudios 2008–2013), centrada en el diseño, la mejora y la gestión de procesos, operaciones y sistemas productivos.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=2" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+      <div class="card"><span class="tag-mini">Transformación digital</span><h3>Transformación Digital: liderando personas, dominando datos y tecnología</h3><div class="by">UC Berkeley Executive Education (Haas School of Business) · Mayo 2021</div><p>Programa estratégico sobre cómo las tecnologías digitales transforman las organizaciones: datos, tecnología y personas.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=4" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+      <div class="card"><span class="tag-mini">Datos</span><h3>Business Analytics: tomar decisiones a partir de los datos</h3><div class="by">Cambridge Judge Business School, University of Cambridge · Septiembre 2021</div><p>Cómo decidir mejor con datos: sesgos, recolección y limpieza, estadística, experimentos y analítica predictiva.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=5" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+      <div class="card"><span class="tag-mini">Gestión ágil</span><h3>Scrum: entorno Agile para proyectos</h3><div class="by">Universidad ESAN y ESAN Graduate School of Business · Nov–Dic 2021</div><p>12 sesiones online (18 horas) para el equipo de SIDERPERU sobre roles, sprints, artefactos y ceremonias de Scrum.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=6" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+      <div class="card"><span class="tag-mini">Idiomas</span><h3>Inglés: nivel C2</h3><div class="by">Informe de Aon · Octubre 2021</div><p>Evaluación de comprensión escrita con el Marco Común Europeo de Referencia: C2, el nivel más alto de la escala.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=7" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+    </div>
+    <a class="all-link" href="Diplomas_y_certificados_Chiarella_Bencan.pdf" target="_blank" rel="noopener">Ver todos los certificados (PDF) ↗</a>
+  </div>
+</section>
+
 <!-- PROYECTOS -->
 <section id="proyectos">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">02 — Lo que construyo</div>
+        <div class="sec-num">04 — Lo que construyo</div>
         <h2>Proyectos</h2>
       </div>
       <div class="sec-note">Sin datos confidenciales de clientes ni empleadores.</div>
@@ -207,44 +346,131 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">03 — Momentos</div>
+        <div class="sec-num">05 — Momentos</div>
         <h2>Galería</h2>
       </div>
-      <div class="sec-note">WOBI, World Business Forum y las personas en el camino.</div>
+      <div class="sec-note">Toca una foto para verla en grande.</div>
     </div>
-    <div class="grid3">
-      <div class="placeholder"><span>Foto — hosting WBF</span></div>
-      <div class="placeholder"><span>Foto — con speaker</span></div>
-      <div class="placeholder"><span>Foto — evento WOBI</span></div>
-      <div class="placeholder"><span>Foto — backstage</span></div>
-      <div class="placeholder"><span>Foto — equipo</span></div>
-      <div class="placeholder"><span>+ Agregar más</span></div>
+
+    <div class="subhead">WOBI · World Business Forum</div>
+    <div class="gal g4">
+      <button class="tile" type="button" data-src="wobi-coppola.jpg" data-cap="Con Francis Ford Coppola · Madrid 2023"><img src="wobi-coppola.jpg" alt="Chiarella acompañando a Francis Ford Coppola al escenario" loading="lazy"><span class="cap">Con Francis Ford Coppola · Madrid 2023</span></button>
+      <button class="tile" type="button" data-src="wobi-solo-milano.jpg" data-cap="Presentando en WOBI on AI &amp; Business Transformation · Milán 2025"><img src="wobi-solo-milano.jpg" alt="Chiarella en el escenario de WOBI en Milán, con su presentación en la pantalla" loading="lazy"><span class="cap">Presentando en WOBI on AI &amp; Business Transformation · Milán 2025</span></button>
+      <button class="tile" type="button" data-src="wobi-phelps.jpg" data-cap="Con Michael Phelps · Madrid 2023"><img src="wobi-phelps.jpg" alt="Chiarella conversando con Michael Phelps en el escenario" loading="lazy"><span class="cap">Con Michael Phelps · Madrid 2023</span></button>
+      <button class="tile" type="button" data-src="wobi-solo-escenario.jpg" data-cap="Conduciendo una sesión en el escenario de WOBI"><img src="wobi-solo-escenario.jpg" alt="Chiarella en el escenario junto a las letras WOBI" loading="lazy"><span class="cap">Conduciendo una sesión en el escenario de WOBI</span></button>
+      <button class="tile top" type="button" data-src="wobi-brown.jpg" data-cap="Con Brené Brown · Madrid 2025"><img src="wobi-brown.jpg" alt="Chiarella entrevistando a Brené Brown, con su imagen proyectada en pantalla" loading="lazy"><span class="cap">Con Brené Brown · Madrid 2025</span></button>
+      <button class="tile" type="button" data-src="wobi-solo-madrid.jpg" data-cap="Presentando a Adam Grant · World Business Forum Madrid"><img src="wobi-solo-madrid.jpg" alt="Chiarella en el escenario del World Business Forum Madrid con el logo WOBI iluminado" loading="lazy"><span class="cap">Presentando a Adam Grant · World Business Forum Madrid</span></button>
+      <button class="tile" type="button" data-src="wobi-agassi.jpg" data-cap="Con Andre Agassi · Sydney 2024"><img src="wobi-agassi.jpg" alt="Chiarella entrevistando a Andre Agassi en el escenario" loading="lazy"><span class="cap">Con Andre Agassi · Sydney 2024</span></button>
+      <button class="tile top" type="button" data-src="wobi-lewis.jpg" data-cap="Con Carl Lewis · Madrid 2026"><img src="wobi-lewis.jpg" alt="Chiarella posando con Carl Lewis" loading="lazy"><span class="cap">Con Carl Lewis · Madrid 2026</span></button>
+    </div>
+    <a class="all-link more" href="galeria-wobi.html">Ver más fotos de WOBI →</a>
+
+    <div class="subhead">SIDERPERU · Gerdau</div>
+    <div class="gal row3">
+      <button class="tile" type="button" data-src="galeria-siderperu-01.jpg" data-cap="Jornada de Innovación y Transformación Digital: foto de cierre con el equipo, SIDERPERU (Gerdau)"><img src="galeria-siderperu-01.jpg" alt="Grupo grande de colaboradores de SIDERPERU con globos y carteles sobre innovación y transformación digital" loading="lazy"><span class="cap">Jornada de Innovación y Transformación Digital: foto de cierre con el equipo, SIDERPERU (Gerdau)</span></button>
+      <button class="tile" type="button" data-src="galeria-siderperu-02.jpg" data-cap="Presentando la agenda de Innovación y Transformación Digital a colaboradores de SIDERPERU"><img src="galeria-siderperu-02.jpg" alt="Chiarella hablando con un micrófono frente a colaboradores de SIDERPERU, junto a un banner de Innovación y Transformación Digital" loading="lazy"><span class="cap">Presentando la agenda de Innovación y Transformación Digital a colaboradores de SIDERPERU</span></button>
+      <button class="tile top" type="button" data-src="galeria-siderperu-03.jpg" data-cap="En planta, con el uniforme de SIDERPERU (Gerdau)"><img src="galeria-siderperu-03.jpg" alt="Chiarella con el uniforme de seguridad de SIDERPERU junto a una vitrina de productos de acero" loading="lazy"><span class="cap">En planta, con el uniforme de SIDERPERU (Gerdau)</span></button>
+    </div>
+
+    <div class="subhead">Oracle</div>
+    <div class="gal row5">
+      <button class="tile" type="button" data-src="galeria-oracle-01.jpg" data-cap="Semana de la Calidad 2018: charla en representación de Oracle"><img src="galeria-oracle-01.jpg" alt="Chiarella en el podio de la Semana de la Calidad 2018 con el logo de Oracle en pantalla" loading="lazy"><span class="cap">Semana de la Calidad 2018</span></button>
+      <button class="tile" type="button" data-src="galeria-oracle-02.jpg" data-cap="Keynote en un evento de Oracle: “¿Vamos a inventar juntos?”"><img src="galeria-oracle-02.jpg" alt="Chiarella en un escenario de Oracle frente a una pantalla con una bombilla y la frase Vamos a inventar juntos" loading="lazy"><span class="cap">Keynote en Oracle</span></button>
+      <button class="tile top" type="button" data-src="galeria-oracle-03.jpg" data-cap="Oracle Academy · #GirlsInICT: charla a estudiantes en la Universidad San Ignacio de Loyola"><img src="galeria-oracle-03.jpg" alt="Chiarella dando una charla a estudiantes con camisetas #GirlsInICT en un aula universitaria" loading="lazy"><span class="cap">#GirlsInICT · USIL</span></button>
+      <button class="tile" type="button" data-src="galeria-oracle-04.jpg" data-cap="Entrevista en Andina, Agencia Peruana de Noticias"><img src="galeria-oracle-04.jpg" alt="Chiarella siendo entrevistada en el estudio de Andina, Agencia Peruana de Noticias" loading="lazy"><span class="cap">Entrevista en Andina</span></button>
+      <button class="tile" type="button" data-src="galeria-oracle-05.jpg" data-cap="Con el equipo de Oracle Women&#x27;s Leadership (OWL)"><img src="galeria-oracle-05.jpg" alt="Equipo de Oracle Women&#x27;s Leadership posando junto a las letras OWL iluminadas" loading="lazy"><span class="cap">Oracle Women&#x27;s Leadership</span></button>
     </div>
   </div>
 </section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="x" type="button" aria-label="Cerrar">×</button>
+  <button class="p" type="button" aria-label="Anterior">‹</button>
+  <img id="lbimg" src="" alt="">
+  <div class="lbcap" id="lbcap"></div>
+  <button class="n" type="button" aria-label="Siguiente">›</button>
+</div>
 
 <!-- BIBLIOTECA -->
 <section id="biblioteca">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">04 — Lecturas</div>
+        <div class="sec-num">06 — Lecturas</div>
         <h2>Biblioteca</h2>
       </div>
-      <div class="sec-note">Libros de negocio, organizados por categoría, con resumen propio.</div>
+      <div class="sec-note">Mis resúmenes y los libros que he leído.</div>
     </div>
 
-    <div class="subhead">Liderazgo</div>
-    <div class="grid3">
-      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
+    <div class="subhead">Mis resúmenes</div>
+    <p class="intro">Resúmenes de libros de 10 minutos que escribí para WOBI Book Summaries. Quedan como recuerdo de cómo leo: buscando las ideas centrales y lo que merece la pena guardar para aplicar en el día a día.</p>
+    <div class="grid2">
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>Beyond Disruption</h3><div class="by">W. Chan Kim y Renée Mauborgne</div><p>Cómo innovar y crecer creando mercados nuevos, sin desplazar industrias, empresas ni empleos.</p><div class="sumlinks"><a href="Resumen_BeyondDisruption_ES.pdf" target="_blank" rel="noopener">Leer en español ↗</a> <a href="Resumen_BeyondDisruption_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>El poder de la presencia (Presence)</h3><div class="by">Amy Cuddy</div><p>Pequeños ajustes de postura, respiración y mentalidad para mostrarte como tu yo más auténtico, sobre todo bajo presión.</p><div class="sumlinks"><a href="Resumen_Presence_ES.pdf" target="_blank" rel="noopener">Leer en español ↗</a> <a href="Resumen_Presence_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>The Black Swan</h3><div class="by">Nassim Nicholas Taleb</div><p>Los eventos más improbables son los que más moldean el mundo, y solo parecen explicables cuando ya ocurrieron.</p><div class="sumlinks"><a href="Resumen_BlackSwan_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>The Innovator's Dilemma</h3><div class="by">Clayton M. Christensen</div><p>Por qué grandes empresas bien gestionadas fracasan cuando aparecen nuevas tecnologías.</p><div class="sumlinks"><a href="Resumen_InnovatorsDilemma_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>Failing Forward</h3><div class="by">John C. Maxwell</div><p>El fracaso como base del éxito, con una guía de 15 pasos para convertir los errores en impulso. (En español: <i>El lado positivo del fracaso</i>.)</p><div class="sumlinks"><a href="Resumen_FailingForward_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
+      <div class="card sumcard"><span class="tag-mini">Resumen de 10 min</span><h3>The 7 Habits of Highly Effective People</h3><div class="by">Stephen R. Covey</div><p>Un clásico sobre disciplina, liderazgo y crecimiento sostenible, tanto en lo personal como en lo corporativo.</p><div class="sumlinks"><a href="Resumen_7Habits_EN.pdf" target="_blank" rel="noopener">Read in English ↗</a></div></div>
     </div>
-    <div class="subhead">Estrategia &amp; Producto</div>
-    <div class="grid3">
-      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
-    </div>
-    <div class="subhead">Tecnología &amp; IA</div>
-    <div class="grid3">
-      <div class="placeholder"><span>+ Agregar libro y resumen</span></div>
+
+    <div class="subhead">Libros que he leído</div>
+    <p class="intro">Estos son los libros que he leído en los últimos años, ordenados por tema.</p>
+    <div class="grid2">
+      <div class="card">
+        <div class="cat-title">Liderazgo y organizaciones</div>
+        <ul class="booklist">
+          <li><b>Built to Last</b> — Jim Collins y Jerry Porras</li>
+          <li><b>The 7 Habits of Highly Effective People</b> — Stephen R. Covey</li>
+          <li><b>En busca de la excelencia</b> — Tom Peters y Robert Waterman</li>
+          <li><b>The Effective Executive</b> — Peter Drucker</li>
+          <li><b>Dare to Lead</b> — Brené Brown</li>
+          <li><b>The Fearless Organization</b> — Amy Edmondson</li>
+          <li><b>La empresa consciente</b> — Fred Kofman</li>
+          <li><b>Linchpin</b> — Seth Godin</li>
+          <li><b>Presence</b> — Amy Cuddy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="cat-title">Estrategia e innovación</div>
+        <ul class="booklist">
+          <li><b>The Innovator's Dilemma</b> — Clayton Christensen</li>
+          <li><b>El método Lean Startup</b> — Eric Ries</li>
+          <li><b>Nuevo orden mundial</b> — Ray Dalio</li>
+          <li><b>Beyond Disruption</b> — W. Chan Kim y Renée Mauborgne</li>
+        </ul>
+        <div class="cat-title" style="margin-top:22px;">Influencia y comunicación</div>
+        <ul class="booklist">
+          <li><b>How to Win Friends and Influence People</b> — Dale Carnegie</li>
+          <li><b>Cómo hablar bien en público</b> — Dale Carnegie</li>
+          <li><b>Las 48 leyes del poder</b> — Robert Greene y Joost Elffers</li>
+          <li><b>27 técnicas de persuasión</b> — Chris St. Hilaire (con Lynette Pawa)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="cat-title">Decisiones, enfoque y mentalidad</div>
+        <ul class="booklist">
+          <li><b>Pensar rápido, pensar despacio</b> — Daniel Kahneman</li>
+          <li><b>The Black Swan</b> — Nassim Nicholas Taleb</li>
+          <li><b>Outliers</b> — Malcolm Gladwell</li>
+          <li><b>Inmune a la distracción</b> — Nir Eyal</li>
+          <li><b>El lado positivo del fracaso</b> — John C. Maxwell</li>
+          <li><b>Buyology</b> — Martin Lindstrom</li>
+          <li><b>Focus</b> — Daniel Goleman y otros autores (HBR Emotional Intelligence Series)</li>
+          <li><b>Atomic Habits</b> — James Clear</li>
+          <li><b>La buena suerte</b> — Álex Rovira y Fernando Trías de Bes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="cat-title">Crecimiento personal</div>
+        <ul class="booklist">
+          <li><b>Los dones de la imperfección</b> — Brené Brown</li>
+          <li><b>El hombre en busca de sentido</b> — Viktor Frankl</li>
+          <li><b>El poder del ahora</b> — Eckhart Tolle</li>
+          <li><b>How to Be Enough</b> — Ellen Hendriksen</li>
+          <li><b>Rising Strong</b> — Brené Brown</li>
+          <li><b>La inteligencia migratoria</b> — Joseba Achotegui Loizate</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -254,15 +480,46 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">05 — En mis palabras</div>
+        <div class="sec-num">07 — En mis palabras</div>
         <h2>Artículos</h2>
       </div>
-      <div class="sec-note">Posteados originalmente en LinkedIn.</div>
+      <div class="sec-note">13 artículos publicados en LinkedIn, en español e inglés, agrupados por tema.</div>
     </div>
-    <div class="grid2">
-      <div class="placeholder"><span>+ Agregar artículo (título, fecha, link a LinkedIn)</span></div>
-      <div class="placeholder"><span>+ Agregar artículo (título, fecha, link a LinkedIn)</span></div>
+
+    <div class="subhead">Mujeres y equidad de género</div>
+    <div class="art-list">
+      <a class="art" href="https://www.linkedin.com/pulse/8m-y-tú-cómo-quieres-ser-recordada-chiarella-bencan-h3fdf/" target="_blank" rel="noopener"><span class="t">8M y tú: ¿cómo quieres ser recordada?<span class="lang">ES</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/celebrating-women-pioneers-e-learning-industry-chiarella-bencan/" target="_blank" rel="noopener"><span class="t">Celebrating Women Pioneers in the E-Learning Industry<span class="lang">EN</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/equidad-de-género-trendingtopiccómo-se-siente-para-bencan-cordero/" target="_blank" rel="noopener"><span class="t">Equidad de género #TrendingTopic: cómo se siente para…<span class="lang">ES</span><span class="lang">SIDERPERU</span></span><span class="arrow">↗</span></a>
     </div>
+
+    <div class="subhead">E-learning y aprendizaje ejecutivo</div>
+    <div class="art-list">
+      <a class="art" href="https://www.linkedin.com/pulse/navigating-future-executive-learning-key-trends-2024-chiarella-bencan-havef/" target="_blank" rel="noopener"><span class="t">Navigating the Future of Executive Learning: Key Trends for 2024<span class="lang">EN</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/daily-learning-executive-success-nurturing-teamwork-job-bencan/" target="_blank" rel="noopener"><span class="t">Daily Learning for Executive Success: Nurturing Teamwork<span class="lang">EN</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/e-learing-organizations-chiarella-bencan/" target="_blank" rel="noopener"><span class="t">E-Learning in Organizations<span class="lang">EN</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="subhead">Reflexiones y COVID</div>
+    <div class="art-list">
+      <a class="art" href="https://www.linkedin.com/pulse/la-tecnología-en-tiempos-de-cuarentena-chiarella-bencan-cordero/" target="_blank" rel="noopener"><span class="t">La tecnología en tiempos de cuarentena<span class="lang">ES</span><span class="lang">SIDERPERU</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/reflexiones-en-tiempos-de-reflexión-querida-yo-mundo-bencan-cordero/" target="_blank" rel="noopener"><span class="t">Reflexiones en tiempos de reflexión: querida yo, mundo…<span class="lang">ES</span><span class="lang">SIDERPERU</span></span><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="subhead">Mis experiencias en el trabajo</div>
+    <div class="art-list">
+      <a class="art" href="https://www.linkedin.com/pulse/mis-primeros-30-días-en-siderperu-gerdau-chiarella-bencan-cordero/" target="_blank" rel="noopener"><span class="t">Mis primeros 30 días en SIDERPERU (Gerdau)<span class="lang">ES</span><span class="lang">SIDERPERU</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/wobi-y-yo-chiarella-bencan/" target="_blank" rel="noopener"><span class="t">WOBI y yo<span class="lang">ES</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/2-años-en-wobi-chiarella-bencan-dl9sf/" target="_blank" rel="noopener"><span class="t">2 años en WOBI<span class="lang">ES</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+      <a class="art" href="https://www.linkedin.com/pulse/la-semana-de-innovación-siderperu-chiarella-bencan-cordero/" target="_blank" rel="noopener"><span class="t">La Semana de Innovación SIDERPERU<span class="lang">ES</span><span class="lang">SIDERPERU</span></span><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="subhead">Liderazgo</div>
+    <div class="art-list">
+      <a class="art" href="https://www.linkedin.com/pulse/más-allá-del-ruido-por-qué-la-sabiduría-es-el-nuevo-liderazgo-bencan-kaate/" target="_blank" rel="noopener"><span class="t">Más allá del ruido: por qué la sabiduría es el nuevo liderazgo<span class="lang">ES</span><span class="lang">WOBI</span></span><span class="arrow">↗</span></a>
+    </div>
+
+    <a class="all-link" href="https://www.linkedin.com/in/chiarellabencan/recent-activity/articles/" target="_blank" rel="noopener">Ver todos en LinkedIn ↗</a>
   </div>
 </section>
 
@@ -271,16 +528,17 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">06 — Más allá del cargo</div>
+        <div class="sec-num">08 — Más allá del cargo</div>
         <h2>Voluntariado</h2>
       </div>
       <div class="sec-note">&nbsp;</div>
     </div>
     <div class="grid2">
-      <div class="card"><span class="tag-mini">Cruz Roja Española</span><h3>Trabajo con niños de 6 a 16 años</h3><p>Voluntaria activa en programas comunitarios.</p></div>
+      <div class="card"><span class="tag-mini">Voluntariado social · Cruz Roja Española<span class="badge">ACTIVO</span></span><h3>Trabajo con niños de 6 a 16 años</h3><p>Voluntaria en programas comunitarios.</p></div>
       <div class="card"><span class="tag-mini">Fundación Peruana de Cáncer</span><h3>Voluntariado social</h3><p>Apoyo a la fundación en Perú.</p></div>
       <div class="card"><span class="tag-mini">SIDERPERU</span><h3>Mentoría de estudiantes y gerentes</h3><p>Desarrollo profesional dentro del programa de mentoría de la empresa.</p></div>
-      <div class="card"><span class="tag-mini">Women in Tech</span><h3>Mentora de mujeres en STEM</h3><p>Acompañamiento de carrera para mujeres en tecnología.</p></div>
+      <div class="card"><span class="tag-mini">Women in Tech</span><h3>Mentora y parte de la apertura del capítulo de Madrid</h3><p>Acompañamiento de carrera para mujeres en STEM, y ayudé a abrir el capítulo de Madrid.</p></div>
+      <div class="card span2"><span class="tag-mini">Oracle Women's Leadership (OWL)</span><h3>Abrí el capítulo de OWL en Perú</h3><p>Impulsé la apertura del capítulo de Oracle Women's Leadership en Perú.</p></div>
     </div>
   </div>
 </section>
@@ -290,75 +548,84 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">07 — Fuera de la oficina</div>
+        <div class="sec-num">09 — Fuera de la oficina</div>
         <h2>Hobbies e intereses</h2>
       </div>
-      <div class="sec-note">&nbsp;</div>
+      <div class="sec-note">Lo que me llena el día, además del trabajo.</div>
+    </div>
+
+    <div class="subhead">Deporte</div>
+    <div class="card" style="border:1px solid var(--line);"><div class="chips" style="margin-top:0;"><span>Hot yoga</span><span>Strength training</span><span>HYROX</span><span>Pilates</span><span>Hiking</span><span>Diving</span></div></div>
+
+    <div class="subhead">Plantas, lecturas y pantallas</div>
+    <div class="grid3">
+      <div class="card"><span class="tag-mini">Jardinería · Más de 15 plantas</span><h3>Mi pequeña selva</h3><p>Orquídeas, aromáticas, plantas para cocinar y las fáciles de siempre: lengua de suegra, anturios y costilla de Adán. Ahora, probando cultivar desde la germinación.</p></div>
+      <div class="card"><span class="tag-mini">Leer</span><h3>Novelas y libros</h3><p>Novelas históricas, novelas negras, y libros de management y crecimiento personal. Mira la <a href="#biblioteca">Biblioteca</a>.</p></div>
+      <div class="card"><span class="tag-mini">YouTube y cine</span><h3>Documentales y películas repetidas</h3><p>Documentales en YouTube y muchas películas repetidas, jaja. De streaming, solo tengo Prime.</p></div>
     </div>
 
     <div class="subhead">Fun facts</div>
     <div class="grid3">
-      <div class="card"><span class="tag-mini">Lectura</span><h3>Fan de Tolkien</h3><p>El Señor de los Anillos, en su versión más completa posible.</p></div>
-      <div class="card"><span class="tag-mini">Tech</span><h3>Early adopter</h3><p>Beta tester de Apple desde 2013 — siempre entre los primeros probando lo nuevo.</p></div>
+      <div class="card"><span class="tag-mini">Lectura</span><h3>Fan de Tolkien</h3><p>Soy fan de la obra de Tolkien.</p></div>
+      <div class="card"><span class="tag-mini">Tech</span><h3>Early adopter</h3><p>Beta tester de Apple desde 2013, siempre entre las primeras en probar lo nuevo.</p></div>
       <div class="card"><span class="tag-mini">Trivia</span><h3>Me sé todas las capitales del mundo</h3><p>Un dato random que sorprende en cualquier conversación.</p></div>
-      <div class="card"><span class="tag-mini">Productividad</span><h3>Rutina de mañanas</h3><p>+ Agregar detalle de la rutina</p></div>
-      <div class="card"><span class="tag-mini">Tech</span><h3>Hago mis propios Shortcuts de Apple</h3><p>Automatizo mi día a día con atajos propios en el ecosistema Apple.</p></div>
-      <div class="placeholder"><span>+ Agregar otro fun fact</span></div>
-    </div>
-
-    <div class="subhead">Deporte &amp; hobbies</div>
-    <div class="grid3">
-      <div class="placeholder"><span>+ Agregar deporte o actividad</span></div>
-      <div class="placeholder"><span>+ Agregar hobby</span></div>
-      <div class="placeholder"><span>+ Agregar interés</span></div>
+      <div class="card"><span class="tag-mini">Tech</span><h3>Amo automatizar todo con IA y Shortcuts de Apple</h3><p>Mis propios atajos en el ecosistema Apple, más inteligencia artificial para el día a día.</p></div>
+      <div class="card span2"><span class="tag-mini">Rutina de mañanas</span><h3>Arriba a las 5:00 am entre semana</h3><p>Meditación y dos saludos al sol, café con noticias en podcast, bici estática, mi lección de Duolingo en italiano y un repaso al calendario antes de ir a entrenar. Los fines de semana me levanto entre 7:00 y 7:30. La noche anterior dejo lista mi ropa y lo que voy a comer.</p></div>
     </div>
   </div>
 </section>
 
 <!-- REDES SOCIALES -->
-<section id="redes">
+<section id="redes" style="border-bottom:none;">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-num">08 — Dónde encontrarme</div>
+        <div class="sec-num">10 — Dónde encontrarme</div>
         <h2>Redes sociales</h2>
       </div>
       <div class="sec-note">&nbsp;</div>
     </div>
     <div class="grid2">
-      <div class="card"><span class="tag-mini">Activa</span><h3>LinkedIn</h3><p>Mi canal principal — ahí posteo, respondo y conecto.</p></div>
-      <div class="card"><span class="tag-mini">Inactiva</span><h3>Instagram</h3><p>No la tengo instalada hace 6 meses.</p></div>
-      <div class="card"><span class="tag-mini">Inactiva</span><h3>Facebook</h3><p>Sin uso desde hace más de 5 años.</p></div>
-      <div class="card"><span class="tag-mini">Nunca usada</span><h3>TikTok</h3><p>Nunca tuve cuenta ahí.</p></div>
+      <div class="card"><span class="tag-mini">Activa</span><h3>LinkedIn</h3><p>Mi canal principal: ahí posteo, respondo y conecto. <a href="https://www.linkedin.com/in/chiarellabencan" target="_blank" rel="noopener">Ver mi perfil</a></p></div>
+      <div class="card"><span class="tag-mini">Casi inactiva</span><h3>Instagram</h3><p>Borré la app de mis dispositivos hace un año (un alivio), pero la cuenta sigue abierta. <a href="https://www.instagram.com/chiarellabencan/" target="_blank" rel="noopener">Ver mi cuenta</a></p></div>
+      <div class="card"><span class="tag-mini">Inactiva</span><h3>Facebook</h3><p>Ya no lo uso.</p></div>
+      <div class="card"><span class="tag-mini">Nunca usada</span><h3>TikTok</h3><p>Nunca he tenido cuenta.</p></div>
     </div>
-    <div class="note">Disclosure honesto: si me escriben por Instagram o Facebook, probablemente no lo vea — no es nada personal, esas apps simplemente no están en mi día a día. LinkedIn es el lugar donde sí estoy.</div>
-  </div>
-</section>
-
-<!-- DOCUMENTOS -->
-<section id="documentos" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="sec-num">09 — Respaldo formal</div>
-        <h2>Documentos</h2>
-      </div>
-      <div class="sec-note">CV, cartas de presentación y diplomas.</div>
-    </div>
-    <div class="doclist">
-      <a class="doc" href="CV_Chiarella_Bencan_ENG.pdf" target="_blank"><span class="name">CV — Versión en inglés (PDF)</span><span class="arrow">↓</span></a>
-      <a class="doc" href="CV_Chiarella_Bencan_ESP.pdf" target="_blank"><span class="name">CV — Versión en español (PDF)</span><span class="arrow">↓</span></a>
-      <a class="doc" href="Carta_Presentacion_Generica_Chiarella_Bencan.docx" target="_blank"><span class="name">Carta de presentación (DOCX)</span><span class="arrow">↓</span></a>
-      <a class="doc" href="Diplomas_y_certificados_Chiarella_Bencan.pdf" target="_blank"><span class="name">Diplomas y certificados (PDF)</span><span class="arrow">↓</span></a>
+    <div class="note">Disclosure honesto: si me escriben por Instagram o Facebook, probablemente no lo vea. No es nada personal: esas apps simplemente no están en mi día a día. Así que si no respondo, ¡no se molesten, jaja! LinkedIn es el lugar donde sí estoy.</div>
+    <div class="subhead">Contacto</div>
+    <div class="grid3">
+      <div class="card"><span class="tag-mini">Correo</span><h3><a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a></h3></div>
+      <div class="card"><span class="tag-mini">Móvil</span><h3><a href="tel:+34660828876">+34 660 828 876</a></h3></div>
+      <div class="card"><span class="tag-mini">Vivo en</span><h3>Chamberí, Madrid</h3></div>
     </div>
   </div>
 </section>
 
 <footer>
-  Chiarella Bencan Cordero — Madrid, España<br>
-  <a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a> ·
+  Chiarella Bencan Cordero — Chamberí, Madrid<br>
+  <a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a> · <a href="tel:+34660828876">+34 660 828 876</a> ·
   <a href="https://www.linkedin.com/in/chiarellabencan" target="_blank">LinkedIn</a>
 </footer>
 
+<script>
+(function(){
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile'));
+  var lb = document.getElementById('lb'), img = document.getElementById('lbimg'), cap = document.getElementById('lbcap');
+  var cur = 0;
+  function show(i){ cur = (i + tiles.length) % tiles.length; img.src = tiles[cur].dataset.src; img.alt = tiles[cur].querySelector('img').alt; cap.textContent = tiles[cur].dataset.cap; lb.classList.add('open'); }
+  function hide(){ lb.classList.remove('open'); img.src = ''; }
+  tiles.forEach(function(t, i){ t.addEventListener('click', function(){ show(i); }); });
+  lb.querySelector('.x').addEventListener('click', hide);
+  lb.querySelector('.p').addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.n').addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) hide(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+</script>
 </body>
 </html>
