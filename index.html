@@ -9,7 +9,7 @@
 <style>
   :root{
     --bg:#0A0A0A; --bg2:#161616; --ink:#EDEFF3; --ink-dim:#A6A6A6;
-    --gold:#C9A24B; --blue:#5B7A99; --line:#ffffff1c;
+    --gold:#4DB586; --blue:#5FA3DA; --line:#ffffff1c;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -34,6 +34,7 @@
   .eyebrow{font-weight:800; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
   h1.title{font-weight:800; font-size:34px; text-transform:uppercase; line-height:1.2; letter-spacing:-.01em; max-width:600px;}
   .hero p{font-size:15px; color:var(--ink-dim); max-width:500px; margin-top:18px;}
+  .hero p.avail{font-size:14px; color:var(--ink); border-left:2px solid var(--gold); padding-left:14px; margin:0 0 12px; max-width:560px;}
   .rule{height:1px; background:var(--gold); width:56px; margin:24px 0;}
   .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
   .chips span{font-size:11px; border:1px solid var(--line); padding:6px 12px; border-radius:100px; color:var(--ink-dim);}
@@ -44,6 +45,8 @@
   .sec-num{font-weight:800; font-size:11px; letter-spacing:.16em; color:var(--gold); text-transform:uppercase; margin-bottom:8px;}
   .sec-head h2{font-size:24px; font-weight:800; text-transform:uppercase;}
   .sec-note{font-size:12px; color:var(--ink-dim); max-width:220px; text-align:right;}
+  .sec-note.one{max-width:none; white-space:nowrap;}
+  @media(max-width:640px){.sec-note.one{white-space:normal;}}
 
   /* TRAYECTORIA */
   .timeline{display:flex; flex-direction:column; gap:0;}
@@ -62,11 +65,17 @@
   details.speakers[open] summary::after{content:" −";}
   details.speakers ul{list-style:none; columns:3; column-gap:24px; margin-top:16px; font-size:12.5px; color:var(--ink-dim);}
   details.speakers li{padding:3px 0; break-inside:avoid;}
+  details.speakers li a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line);}
+  details.speakers li a:hover{color:var(--gold); border-color:var(--gold);}
 
 
   .card a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);}
   .card.compact{padding:18px 22px;}
   .card.compact h3{margin-bottom:0;}
+  .projlist{list-style:none; margin-top:10px;}
+  .projlist li{font-size:13.5px; color:var(--ink-dim); padding:5px 0; border-top:1px solid var(--line);}
+  .projlist li:first-child{border-top:none;}
+  .projlist b{color:var(--ink); font-weight:600;}
   .booklist{list-style:none; margin-top:12px;}
   .booklist li{font-size:13px; color:var(--ink-dim); padding:7px 0; border-top:1px solid var(--line);}
   .booklist li:first-child{border-top:none;}
@@ -186,10 +195,12 @@
 
 <div class="hero wrap">
   <div>
-    <div class="eyebrow">Portal Profesional — Chamberí, Madrid</div>
+    <div class="eyebrow">Portal Profesional — Madrid, España</div>
     <h1 class="title">Conectando Ideas, Tecnología e Impacto en el Negocio</h1>
-    <p>Quince años construyendo puentes entre tecnología, personas y resultados en América y Europa. Este es mi recorrido, contado como lo cuento en una entrevista — no como se lee en un CV.</p>
+    <p>15 años construyendo puentes entre tecnología, personas y resultados en América y Europa. Este es mi recorrido, contado como lo cuento en una entrevista — no como se lee en un CV.</p>
     <div class="rule"></div>
+    <p class="avail">Estoy basada en Madrid, con total flexibilidad y disponibilidad para mudarme. Me siento cómoda con cualquier formato: 100% presencial, híbrido o remoto.</p>
+    <p class="avail">Me interesa explorar posiciones ejecutivas (C-Level, Dirección, Head, VP) en tecnología, transformación digital, proyectos, producto o estrategia, donde pueda aportar tanto visión estratégica como capacidad de ejecución.</p>
     <div class="chips">
       <span>C-Level Internacional</span>
       <span>Innovación &amp; Proyectos</span>
@@ -208,16 +219,16 @@
         <div class="sec-num">01 — El recorrido</div>
         <h2>Trayectoria</h2>
       </div>
-      <div class="sec-note">Contada en primera persona, no como lista de cargos.</div>
+      <div class="sec-note one">Contada en primera persona, no como lista de cargos.</div>
     </div>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-date">2022 — hoy</div>
         <div>
           <div class="role">CDO · WOBI — World Business Forum</div>
-          <h3>Reconstruir un negocio digital desde adentro</h3>
+          <h3>Host del World Business Forum, proyectos de tecnología y más</h3>
           <p>Llegué a WOBI para liderar el ecosistema digital de e-learning y terminé involucrada en muchísimas cosas: proyectos de tecnología, creación de contenido, contratación y relación con speakers - incluso he sido host del World Business Forum en varias ocasiones. He tenido el privilegio de compartir escenario con líderes globales de management como:</p>
-          <p class="speakers-featured">Amal Clooney · Amy Edmondson · Andre Agassi · Brené Brown · Carl Lewis · Daniel Goleman · Francis Ford Coppola · Michael Phelps · Peter Diamandis · Scott Galloway · Vijay Govindarajan</p>
+          <p class="speakers-featured">Amy Cuddy · Andre Agassi · Brené Brown · Carl Lewis · Daniel Goleman · Francis Ford Coppola · Michael Phelps · Muhammad Yunus (Nobel de la Paz) · Nouriel Roubini (predijo la crisis financiera del 2008) · Paul Romer (Nobel de Economía) · Peter Diamandis · Randi Zuckerberg · Stephen M.R. Covey</p>
           <details class="speakers">
             <summary>Ver la lista completa de speakers</summary>
             <ul>
@@ -237,7 +248,7 @@
               <li>Luis Huete</li><li>Magnus</li><li>Malcolm Gladwell</li><li>Marco Bertini</li><li>Marcus Collins</li>
               <li>Mario Draghi</li><li>Mark Roberge</li><li>Marshall Goldsmith</li><li>Mary Murphy</li><li>Matthew Barzun</li>
               <li>Michael Phelps</li><li>Mitchell Weiss</li><li>Modupe Akinola</li><li>Molly Fletcher</li><li>Muhammad Yunus</li>
-              <li>Natalie Nahai</li><li>Nouriel Roubini</li><li>Omar Johnson</li><li>Paola Antonelli</li><li>Patrick Leddin</li>
+              <li>Natalie Nahai</li><li>Nouriel Roubini</li><li>Omar Johnson</li><li>Paola Antonelli</li><li>Patrick Leddin</li><li>Paul Romer (Nobel de Economía)</li>
               <li>Peter Diamandis</li><li>Peter Docker</li><li>Peter Weill</li><li>Peter Wilton</li><li>Pilar Jericó</li>
               <li>Rachel Botsman</li><li>Radhika Dirks</li><li>Randi Zuckerberg</li><li>Reid Blackman</li><li>Renee Mauborgne</li>
               <li>Renee Richardson Gosline</li><li>Rich Sheridan</li><li>Richard Boyatzis</li><li>Richard Hall</li><li>Rigoberto Uran</li>
@@ -253,8 +264,12 @@
         <div class="tl-date">2020 — 2022</div>
         <div>
           <div class="role">CIO · Gerdau–SIDERPERU</div>
-          <h3>Crear un área de innovación desde cero</h3>
-          <p>Construí el área de Innovación y Transformación Digital de la planta, lideré un equipo de más de 20 personas y llevamos adelante más de 30 pilotos de innovación en dos años. Uno de ellos, en 2021, fue un proyecto de IA para predecir picos de energía en planta — antes de que "IA" fuera la palabra de moda.</p>
+          <h3>Crear un área de innovación y transformación digital desde cero</h3>
+          <p>Después del primer año en Gerdau–SIDERPERU, me nombraron CIO. Construí el área de Innovación y Transformación Digital de la planta, lideré un equipo de más de 20 personas y llevamos adelante 25 proyectos y pilotos de transformación digital e innovación en dos años. Uno de ellos, en 2021, fue un proyecto de IA para predecir picos de energía en planta — antes de que "IA" fuera la palabra de moda.</p>
+          <details class="speakers projects-list">
+            <summary>Ver la lista completa de proyectos</summary>
+            <ul><li><a href="#proy-comercial">Ferre Go</a></li><li><a href="#proy-comercial">Marketplace y data de canal</a></li><li><a href="#proy-comercial">TuCasa</a></li><li><a href="#proy-comercial">Esquina de la Vida</a></li><li><a href="#proy-comercial">Camioncito</a></li><li><a href="#proy-comercial">Smart Pricing</a></li><li><a href="#proy-suministro">Plataforma de abastecimiento de chatarra</a></li><li><a href="#proy-suministro">Monitor de precios</a></li><li><a href="#proy-suministro">TMP / WMS</a></li><li><a href="#proy-suministro">S&amp;OP y Supply Chain Planning</a></li><li><a href="#proy-planta">Optimización de la mezcla de chatarra</a></li><li><a href="#proy-planta">Dosificación de ferroaleaciones</a></li><li><a href="#proy-planta">Smart Factory</a></li><li><a href="#proy-planta">Predicción de picos de energía</a></li><li><a href="#proy-planta">Visión computacional</a></li><li><a href="#proy-planta">Safety Analytics</a></li><li><a href="#proy-automatizacion">Roadmap de automatización (RPA)</a></li><li><a href="#proy-automatizacion">Web scraping</a></li><li><a href="#proy-automatizacion">Move to Cloud y Connection 4.0</a></li></ul>
+          </details>
         </div>
       </div>
       <div class="tl-item">
@@ -262,7 +277,7 @@
         <div>
           <div class="role">Oracle — Ventas y Preventa de Aplicaciones</div>
           <h3>Del lado del proveedor</h3>
-          <p>Pasé de consultora de preventa a directora de ventas de aplicaciones. Ahí aprendí a traducir tecnología compleja en valor de negocio, y a construir relaciones de largo plazo con clientes — una base que uso todos los días como ejecutiva del lado del cliente.</p>
+          <p>Pasé de dirigir la preventa a ser directora comercial. Trabajé en cientos de proyectos comerciales en todas las industrias y en toda Latinoamérica — durante años viajé casi todas las semanas a países distintos. Conocí los pain points de todas las áreas de una empresa y las soluciones de aplicaciones que los resuelven: ERP, SCM, CX y HR. Ahí aprendí a traducir tecnología compleja en valor de negocio y a construir relaciones de largo plazo con clientes — una base que uso todos los días como ejecutiva del lado del cliente.</p>
         </div>
       </div>
       <div class="tl-item">
@@ -290,7 +305,8 @@
     <div class="doclist">
       <a class="doc" href="CV_Chiarella_Bencan_ENG.pdf" target="_blank"><span class="name">CV — Versión en inglés (PDF)</span><span class="arrow">↓</span></a>
       <a class="doc" href="CV_Chiarella_Bencan_ESP.pdf" target="_blank"><span class="name">CV — Versión en español (PDF)</span><span class="arrow">↓</span></a>
-      <a class="doc" href="Carta_Presentacion_Generica_Chiarella_Bencan.docx" target="_blank"><span class="name">Carta de presentación (DOCX)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="Carta_Presentacion_Chiarella_Bencan.pdf" target="_blank"><span class="name">Carta de presentación — Español (PDF)</span><span class="arrow">↓</span></a>
+      <a class="doc" href="Cover_Letter_Chiarella_Bencan.pdf" target="_blank"><span class="name">Cover letter — English (PDF)</span><span class="arrow">↓</span></a>
     </div>
   </div>
 </section>
@@ -306,7 +322,7 @@
       <div class="sec-note">Cada tarjeta lleva directo al certificado.</div>
     </div>
     <div class="grid2 dipl">
-      <div class="card"><span class="tag-mini">Formación universitaria</span><h3>Ingeniero Industrial</h3><div class="by">Universidad de Lima · Título expedido en 2015</div><p>Ingeniería Industrial (estudios 2008–2013), centrada en el diseño, la mejora y la gestión de procesos, operaciones y sistemas productivos.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=2" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
+      <div class="card"><span class="tag-mini">Formación universitaria</span><h3>Ingeniería Industrial</h3><div class="by">Universidad de Lima · Finalicé en marzo de 2013</div><p>Ingeniería Industrial (estudios 2008–2013), centrada en el diseño, la mejora y la gestión de procesos, operaciones y sistemas productivos.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=2" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
       <div class="card"><span class="tag-mini">Transformación digital</span><h3>Transformación Digital: liderando personas, dominando datos y tecnología</h3><div class="by">UC Berkeley Executive Education (Haas School of Business) · Mayo 2021</div><p>Programa estratégico sobre cómo las tecnologías digitales transforman las organizaciones: datos, tecnología y personas.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=4" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
       <div class="card"><span class="tag-mini">Datos</span><h3>Business Analytics: tomar decisiones a partir de los datos</h3><div class="by">Cambridge Judge Business School, University of Cambridge · Septiembre 2021</div><p>Cómo decidir mejor con datos: sesgos, recolección y limpieza, estadística, experimentos y analítica predictiva.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=5" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
       <div class="card"><span class="tag-mini">Gestión ágil</span><h3>Scrum: entorno Agile para proyectos</h3><div class="by">Universidad ESAN y ESAN Graduate School of Business · Nov–Dic 2021</div><p>12 sesiones online (18 horas) para el equipo de SIDERPERU sobre roles, sprints, artefactos y ceremonias de Scrum.</p><div class="sumlinks"><a href="Diplomas_y_certificados_Chiarella_Bencan.pdf#page=6" target="_blank" rel="noopener">Ver certificado ↗</a></div></div>
@@ -327,16 +343,39 @@
       <div class="sec-note">Sin datos confidenciales de clientes ni empleadores.</div>
     </div>
 
-    <div class="subhead">En mis trabajos</div>
-    <div class="grid2">
-      <div class="card"><span class="tag-mini">WOBI</span><h3>Digitalización del área comercial</h3><p>Lanzamiento de modelos de suscripción y nuevas plataformas de e-learning.</p></div>
-      <div class="card"><span class="tag-mini">Gerdau–SIDERPERU</span><h3>13 proyectos de transformación digital</h3><p>Impacto estimado en EBITDA de +USD 10M a 5 años, con 10 prototipos desarrollados.</p></div>
+    <div class="subhead">WOBI</div>
+    <div class="grid3">
+      <div class="card"><span class="tag-mini">WOBI</span><h3>Upgrade de Salesforce</h3><p>Actualización y evolución del CRM de la compañía.</p></div>
+      <div class="card"><span class="tag-mini">WOBI</span><h3>Transformación del modelo de negocio</h3><p>De venta transaccional a suscripciones.</p></div>
+      <div class="card"><span class="tag-mini">WOBI</span><h3>Lanzamiento de la App WOBI</h3><p>Nueva app para llevar el contenido de WOBI a sus miembros.</p></div>
     </div>
 
-    <div class="subhead">En construcción ahora</div>
+    <div class="subhead">Gerdau–SIDERPERU · Innovación y transformación digital</div>
+    <div class="note" style="margin-top:0">Desde el área de Innovación y Transformación Digital impulsamos decenas de iniciativas y pilotos. Fueron 25 proyectos y pilotos de transformación digital e innovación. Aquí están, agrupados por área y en versión pública.</div>
     <div class="grid2">
-      <div class="placeholder"><span>📚 Portal de libros — agregar descripción y link cuando esté listo</span></div>
-      <div class="placeholder"><span>🌐 Este mismo portal profesional</span></div>
+      <div class="card" id="proy-comercial"><span class="tag-mini">Comercial y canal</span><h3>Acercar la empresa a su cliente</h3><ul class="projlist">
+        <li><b>Ferre Go</b> — canal digital para ferreterías y distribuidores.</li>
+        <li><b>Marketplace y data de canal</b> — plataforma y analítica para entender mejor el canal.</li>
+        <li><b>TuCasa</b> — plataforma de financiamiento para la construcción de vivienda, a través del canal.</li>
+        <li><b>Esquina de la Vida</b> — evaluación y refuerzo estructural de viviendas vulnerables ante sismos.</li>
+        <li><b>Camioncito</b> — simulación logística para atender pedidos de distribuidores de forma más eficiente.</li>
+        <li><b>Smart Pricing</b> — apoyo analítico a la política de precios.</li></ul></div>
+      <div class="card" id="proy-suministro"><span class="tag-mini">Cadena de suministro</span><h3>Más visibilidad y mejores decisiones</h3><ul class="projlist">
+        <li><b>Plataforma de abastecimiento de chatarra</b> — conectar a recicladores y fuentes primarias con la planta.</li>
+        <li><b>Monitor de precios</b> — seguimiento y predicción de precios de materia prima.</li>
+        <li><b>TMP / WMS</b> — plataforma de gestión de transporte y almacenes.</li>
+        <li><b>S&amp;OP y Supply Chain Planning</b> — planificación integrada de ventas y operaciones.</li></ul></div>
+      <div class="card" id="proy-planta"><span class="tag-mini">Planta e industria 4.0</span><h3>Datos e IA en la operación</h3><ul class="projlist">
+        <li><b>Optimización de la mezcla de chatarra</b> — algoritmo de apoyo a la acería.</li>
+        <li><b>Dosificación de ferroaleaciones</b> — modelo para optimizar adiciones en el proceso.</li>
+        <li><b>Smart Factory</b> — mantenimiento predictivo y analítica de planta.</li>
+        <li><b>Predicción de picos de energía</b> — proyecto de IA (2021).</li>
+        <li><b>Visión computacional</b> — clasificación de chatarra por imagen.</li>
+        <li><b>Safety Analytics</b> — analítica para reforzar la seguridad.</li></ul></div>
+      <div class="card" id="proy-automatizacion"><span class="tag-mini">Automatización y datos</span><h3>Bases para escalar</h3><ul class="projlist">
+        <li><b>Roadmap de automatización (RPA)</b> — cartera de procesos a automatizar.</li>
+        <li><b>Web scraping</b> — captura automática de información de mercado.</li>
+        <li><b>Move to Cloud</b> y <b>Connection 4.0</b> — habilitadores tecnológicos para la industria 4.0.</li></ul></div>
     </div>
   </div>
 </section>
@@ -559,9 +598,9 @@
 
     <div class="subhead">Plantas, lecturas y pantallas</div>
     <div class="grid3">
-      <div class="card"><span class="tag-mini">Jardinería · Más de 15 plantas</span><h3>Mi pequeña selva</h3><p>Orquídeas, aromáticas, plantas para cocinar y las fáciles de siempre: lengua de suegra, anturios y costilla de Adán. Ahora, probando cultivar desde la germinación.</p></div>
-      <div class="card"><span class="tag-mini">Leer</span><h3>Novelas y libros</h3><p>Novelas históricas, novelas negras, y libros de management y crecimiento personal. Mira la <a href="#biblioteca">Biblioteca</a>.</p></div>
-      <div class="card"><span class="tag-mini">YouTube y cine</span><h3>Documentales y películas repetidas</h3><p>Documentales en YouTube y muchas películas repetidas, jaja. De streaming, solo tengo Prime.</p></div>
+      <div class="card"><span class="tag-mini">Jardinería</span><h3>Mi pequeña selva</h3><p>Orquídeas, aromáticas, plantas para cocinar y las fáciles de siempre: lengua de suegra, anturios y costilla de Adán. Ahora, probando cultivar desde la germinación.</p></div>
+      <div class="card"><span class="tag-mini">Leer</span><h3>Novelas y libros</h3><p>Novelas históricas, novelas negras, filosofía, psicología, y libros de management y crecimiento personal. Mira la <a href="#biblioteca">Biblioteca</a>.</p></div>
+      <div class="card"><span class="tag-mini">TV</span><h3>Documentales y películas repetidas</h3><p>Documentales y muchas películas repetidas, jaja. De streaming, solo tengo Prime.</p></div>
     </div>
 
     <div class="subhead">Fun facts</div>
@@ -571,6 +610,7 @@
       <div class="card"><span class="tag-mini">Trivia</span><h3>Me sé todas las capitales del mundo</h3><p>Un dato random que sorprende en cualquier conversación.</p></div>
       <div class="card"><span class="tag-mini">Tech</span><h3>Amo automatizar todo con IA y Shortcuts de Apple</h3><p>Mis propios atajos en el ecosistema Apple, más inteligencia artificial para el día a día.</p></div>
       <div class="card span2"><span class="tag-mini">Rutina de mañanas</span><h3>Arriba a las 5:00 am entre semana</h3><p>Meditación y dos saludos al sol, café con noticias en podcast, bici estática, mi lección de Duolingo en italiano y un repaso al calendario antes de ir a entrenar. Los fines de semana me levanto entre 7:00 y 7:30. La noche anterior dejo lista mi ropa y lo que voy a comer.</p></div>
+      <div class="card" style="grid-column:1/-1"><span class="tag-mini">Viajes</span><h3>He viajado a 55 países</h3><p>Entre trabajo y vacaciones, me ha tocado recorrer bastante mundo.</p><details class="speakers"><summary>Ver la lista completa de países</summary><ul><li>Perú</li><li>Chile</li><li>Argentina</li><li>Colombia</li><li>Ecuador</li><li>Bolivia</li><li>República Dominicana</li><li>Paraguay</li><li>Costa Rica</li><li>Cuba</li><li>Brasil</li><li>México</li><li>Jamaica</li><li>EE. UU.</li><li>España</li><li>Ciudad del Vaticano</li><li>Italia</li><li>Francia</li><li>Inglaterra</li><li>Camboya</li><li>Indonesia</li><li>Tailandia</li><li>Egipto</li><li>Turquía</li><li>Israel</li><li>Jordania</li><li>Panamá</li><li>Guatemala</li><li>Belice</li><li>Honduras</li><li>Dinamarca</li><li>Estonia</li><li>Finlandia</li><li>Rusia</li><li>Suecia</li><li>Holanda</li><li>Bélgica</li><li>Luxemburgo</li><li>Mónaco</li><li>Grecia</li><li>Alemania</li><li>República Checa</li><li>Portugal</li><li>Hungría</li><li>Irlanda</li><li>Malta</li><li>Albania</li><li>Australia</li><li>Rumania</li><li>Serbia</li><li>China</li><li>Marruecos</li><li>Noruega</li><li>Polonia</li><li>Austria</li></ul></details></div>
     </div>
   </div>
 </section>
@@ -596,13 +636,13 @@
     <div class="grid3">
       <div class="card"><span class="tag-mini">Correo</span><h3><a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a></h3></div>
       <div class="card"><span class="tag-mini">Móvil</span><h3><a href="tel:+34660828876">+34 660 828 876</a></h3></div>
-      <div class="card"><span class="tag-mini">Vivo en</span><h3>Chamberí, Madrid</h3></div>
+      <div class="card"><span class="tag-mini">Vivo en</span><h3>Chamberí, Madrid</h3><p>Disponibilidad para mudarme · presencial, híbrido o remoto.</p></div>
     </div>
   </div>
 </section>
 
 <footer>
-  Chiarella Bencan Cordero — Chamberí, Madrid<br>
+  Chiarella Bencan Cordero — CHAMBERÍ, MADRID<br>
   <a href="mailto:cbencan@gmail.com">cbencan@gmail.com</a> · <a href="tel:+34660828876">+34 660 828 876</a> ·
   <a href="https://www.linkedin.com/in/chiarellabencan" target="_blank">LinkedIn</a>
 </footer>
