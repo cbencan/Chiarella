@@ -184,6 +184,21 @@
     details.speakers ul{columns:1;}
     .hero-photo{width:160px; height:200px;}
   }
+
+  @media print{
+    @page{size:A4; margin:12mm 0;}
+    html,body{background:#0a0a0a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    header,.lb,.langsw,.all-link,.doc.pdfself{display:none !important;}
+    .tl-item,.card,.doc,.art,.tile,.sumcard,.projcard{break-inside:avoid;}
+    h1,h2,h3,.sec-head{break-after:avoid;}
+    section{padding-top:36px; padding-bottom:36px;}
+    section{break-before:page;}
+    .art{padding:9px 20px;}
+    #articulos .subhead{margin-top:18px;}
+    .grid2,.grid3,.doclist,.note,.chips{break-inside:avoid;}
+    .subhead,.sec-head,.sec-note{break-after:avoid;}
+    .subhead,.sec-head{break-after:avoid-page;}
+  }
 </style>
 </head>
 <body>
@@ -328,7 +343,7 @@
       <a class="doc" href="CV_Chiarella_Bencan_ESP.pdf" target="_blank"><span class="name">CV — Spanish version (PDF)</span><span class="arrow">↓</span></a>
       <a class="doc" href="Carta_Presentacion_Chiarella_Bencan.pdf" target="_blank"><span class="name">Cover letter — Spanish (PDF)</span><span class="arrow">↓</span></a>
       <a class="doc" href="Cover_Letter_Chiarella_Bencan.pdf" target="_blank"><span class="name">Cover letter — English (PDF)</span><span class="arrow">↓</span></a>
-      <a class="doc" href="Portal_Chiarella_Bencan.zip" download><span class="name">Download the full portal (.zip)</span><span class="arrow">↓</span></a>
+      <a class="doc pdfself" href="Portal_Chiarella_Bencan_EN.pdf" target="_blank"><span class="name">Full portal as PDF</span><span class="arrow">↓</span></a>
     </div>
   </div>
 </section>
