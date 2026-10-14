@@ -22,13 +22,17 @@
   header{position:sticky; top:0; background:rgba(10,10,10,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); z-index:50;}
   nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; gap:12px;}
   .brand{font-weight:800; font-size:15px; letter-spacing:.04em; white-space:nowrap;}
+  .langsw{display:flex; gap:2px; font-size:11px; font-weight:800; letter-spacing:.08em; border:1px solid var(--line); border-radius:999px; padding:2px; flex-shrink:0;}
+  .langsw a{text-decoration:none; color:var(--ink-dim); padding:3px 9px; border-radius:999px;}
+  .langsw a.on{background:var(--gold); color:#0a0a0a;}
+  .langsw a:not(.on):hover{color:var(--gold);}
   .navlinks{display:flex; gap:16px; overflow-x:auto; scrollbar-width:none; font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;}
   .navlinks::-webkit-scrollbar{display:none;}
   .navlinks a{color:var(--ink-dim); text-decoration:none; white-space:nowrap; padding-bottom:2px; border-bottom:2px solid transparent;}
   .navlinks a:hover{color:var(--gold); border-color:var(--gold);}
 
   /* HERO */
-  .hero{padding:64px 0 48px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 220px; gap:32px; align-items:start;}
+  .hero{padding:64px 24px 48px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 220px; gap:32px; align-items:start;}
   .hero-photo{width:220px; height:270px; border:1px solid var(--gold); padding:8px;}
   .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(15%);}
   .eyebrow{font-weight:800; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
@@ -73,8 +77,14 @@
   .card.compact{padding:18px 22px;}
   .card.compact h3{margin-bottom:0;}
   .card details.speakers ul{columns:2; column-gap:16px;}
-  .site{display:inline-block; margin:-2px 0 8px; font-size:12px; color:var(--blue); text-decoration:none; border-bottom:1px solid var(--line);}
+  .site{display:inline-block; margin-left:10px; font-size:12px; text-transform:none; letter-spacing:0; font-weight:600; color:var(--blue); text-decoration:none; border-bottom:1px solid var(--line);}
   .site:hover{color:var(--gold); border-color:var(--gold);}
+  .soc{display:inline-flex; width:22px; height:22px; margin-right:10px; vertical-align:-3px; color:var(--gold);}
+  .soc svg{width:100%; height:100%; fill:currentColor;}
+  a.soc:hover{color:var(--blue);}
+  .soc.off{color:var(--gold);}
+  .foot-soc{display:inline-flex; gap:14px; vertical-align:middle;}
+  .foot-soc .soc{margin:0; width:18px; height:18px;}
   .projlist{list-style:none; margin-top:10px;}
   .projlist li{font-size:13.5px; color:var(--ink-dim); padding:5px 0; border-top:1px solid var(--line);}
   .projlist li:first-child{border-top:none;}
@@ -178,6 +188,7 @@
 </style>
 </head>
 <body>
+<div style="position:fixed;top:12px;right:14px;z-index:60;"><div class="langsw" aria-label="Idioma"><a class="on" href="galeria-wobi.html" hreflang="es">ES</a><a href="galeria-wobi-en.html" hreflang="en">EN</a></div></div>
 <section style="border-bottom:none;">
   <div class="wrap">
     <a class="backlink" href="index.html#galeria">← Volver al portal</a>

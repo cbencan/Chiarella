@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOBI Gallery — Chiarella Bencan Cordero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0A; --bg2:#161616; --ink:#EDEFF3; --ink-dim:#A6A6A6;
+    --gold:#4DB586; --blue:#5FA3DA; --line:#ffffff1c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:'Source Sans 3',sans-serif; line-height:1.5;}
+  h1,h2,h3,h4{font-family:'Libre Franklin',sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  header{position:sticky; top:0; background:rgba(10,10,10,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); z-index:50;}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; gap:12px;}
+  .brand{font-weight:800; font-size:15px; letter-spacing:.04em; white-space:nowrap;}
+  .langsw{display:flex; gap:2px; font-size:11px; font-weight:800; letter-spacing:.08em; border:1px solid var(--line); border-radius:999px; padding:2px; flex-shrink:0;}
+  .langsw a{text-decoration:none; color:var(--ink-dim); padding:3px 9px; border-radius:999px;}
+  .langsw a.on{background:var(--gold); color:#0a0a0a;}
+  .langsw a:not(.on):hover{color:var(--gold);}
+  .navlinks{display:flex; gap:16px; overflow-x:auto; scrollbar-width:none; font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{color:var(--ink-dim); text-decoration:none; white-space:nowrap; padding-bottom:2px; border-bottom:2px solid transparent;}
+  .navlinks a:hover{color:var(--gold); border-color:var(--gold);}
+
+  /* HERO */
+  .hero{padding:64px 24px 48px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 220px; gap:32px; align-items:start;}
+  .hero-photo{width:220px; height:270px; border:1px solid var(--gold); padding:8px;}
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(15%);}
+  .eyebrow{font-weight:800; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+  h1.title{font-weight:800; font-size:34px; text-transform:uppercase; line-height:1.2; letter-spacing:-.01em; max-width:600px;}
+  .hero p{font-size:15px; color:var(--ink-dim); max-width:500px; margin-top:18px;}
+  .hero p.avail{font-size:14px; color:var(--ink); border-left:2px solid var(--gold); padding-left:14px; margin:0 0 12px; max-width:560px;}
+  .rule{height:1px; background:var(--gold); width:56px; margin:24px 0;}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
+  .chips span{font-size:11px; border:1px solid var(--line); padding:6px 12px; border-radius:100px; color:var(--ink-dim);}
+
+  /* SECTION SHARED */
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  .sec-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px; gap:16px;}
+  .sec-num{font-weight:800; font-size:11px; letter-spacing:.16em; color:var(--gold); text-transform:uppercase; margin-bottom:8px;}
+  .sec-head h2{font-size:24px; font-weight:800; text-transform:uppercase;}
+  .sec-note{font-size:12px; color:var(--ink-dim); max-width:220px; text-align:right;}
+  .sec-note.one{max-width:none; white-space:nowrap;}
+  @media(max-width:640px){.sec-note.one{white-space:normal;}}
+
+  /* TRAYECTORIA */
+  .timeline{display:flex; flex-direction:column; gap:0;}
+  .tl-item{display:grid; grid-template-columns:90px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--line);}
+  .tl-item:first-child{border-top:none;}
+  .tl-date{font-weight:800; font-size:12px; color:var(--gold); letter-spacing:.05em;}
+  .tl-item h3{font-size:16px; font-weight:600; margin-bottom:6px;}
+  .tl-item .role{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:.04em;}
+  .tl-item p{font-size:13.5px; color:var(--ink-dim);}
+
+  .speakers-featured{margin-top:10px; color:var(--ink) !important; font-weight:500;}
+  details.speakers{margin-top:14px;}
+  details.speakers summary{cursor:pointer; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; list-style:none;}
+  details.speakers summary::-webkit-details-marker{display:none;}
+  details.speakers summary::after{content:" +";}
+  details.speakers[open] summary::after{content:" −";}
+  details.speakers ul{list-style:none; columns:3; column-gap:24px; margin-top:16px; font-size:12.5px; color:var(--ink-dim);}
+  details.speakers li{padding:3px 0; break-inside:avoid;}
+  details.speakers li a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line);}
+  details.speakers li a:hover{color:var(--gold); border-color:var(--gold);}
+
+
+  .card a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);}
+  .card.compact{padding:18px 22px;}
+  .card.compact h3{margin-bottom:0;}
+  .card details.speakers ul{columns:2; column-gap:16px;}
+  .site{display:inline-block; margin-left:10px; font-size:12px; text-transform:none; letter-spacing:0; font-weight:600; color:var(--blue); text-decoration:none; border-bottom:1px solid var(--line);}
+  .site:hover{color:var(--gold); border-color:var(--gold);}
+  .soc{display:inline-flex; width:22px; height:22px; margin-right:10px; vertical-align:-3px; color:var(--gold);}
+  .soc svg{width:100%; height:100%; fill:currentColor;}
+  a.soc:hover{color:var(--blue);}
+  .soc.off{color:var(--gold);}
+  .foot-soc{display:inline-flex; gap:14px; vertical-align:middle;}
+  .foot-soc .soc{margin:0; width:18px; height:18px;}
+  .projlist{list-style:none; margin-top:10px;}
+  .projlist li{font-size:13.5px; color:var(--ink-dim); padding:5px 0; border-top:1px solid var(--line);}
+  .projlist li:first-child{border-top:none;}
+  .projlist b{color:var(--ink); font-weight:600;}
+  .booklist{list-style:none; margin-top:12px;}
+  .booklist li{font-size:13px; color:var(--ink-dim); padding:7px 0; border-top:1px solid var(--line);}
+  .booklist li:first-child{border-top:none;}
+  .booklist li b{color:var(--ink); font-weight:600;}
+  .cat-title{font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold);}
+
+
+  .art-list{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .art{background:var(--bg); display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 20px; text-decoration:none;}
+  .art:hover{background:var(--bg2);}
+  .art .t{font-size:14px; font-weight:600; color:var(--ink);}
+  .art .lang{font-size:10px; font-weight:800; letter-spacing:.1em; color:var(--blue); border:1px solid var(--line); padding:3px 8px; border-radius:100px; margin-left:10px; white-space:nowrap;}
+  .art .arrow{color:var(--gold); font-weight:800;}
+  .all-link{display:inline-block; margin-top:20px; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold);}
+
+
+  .sumlinks{margin-top:12px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;}
+  .sumlinks a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); margin-right:14px;}
+  .sumcard h3{font-size:15px;}
+  .sumcard .by{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px;}
+
+
+  .gal{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .tile{position:relative; display:block; padding:0; border:1px solid var(--line); background:var(--bg2); cursor:zoom-in; overflow:hidden; aspect-ratio:4/3; font:inherit; color:inherit;}
+  .tile img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease, filter .35s ease; filter:grayscale(10%);}
+  .tile:hover img{transform:scale(1.04); filter:none;}
+  .tile.top img{object-position:center 18%;}
+  .tile .cap{position:absolute; left:0; right:0; bottom:0; padding:28px 12px 10px; font-size:12px; line-height:1.35; color:#fff; text-align:left; background:linear-gradient(transparent, rgba(0,0,0,.82));}
+  .lb{position:fixed; inset:0; background:rgba(0,0,0,.92); display:none; align-items:center; justify-content:center; flex-direction:column; z-index:100; padding:24px;}
+  .lb.open{display:flex;}
+  .lb img{max-width:100%; max-height:78vh; object-fit:contain; border:1px solid var(--line);}
+  .lb .lbcap{margin-top:14px; font-size:13.5px; color:var(--ink); max-width:720px; text-align:center;}
+  .lb button{position:absolute; background:none; border:none; color:var(--gold); font-size:30px; cursor:pointer; padding:12px; line-height:1;}
+  .lb .x{top:10px; right:14px;} .lb .p{left:8px; top:50%;} .lb .n{right:8px; top:50%;}
+  @media(max-width:640px){ .gal{grid-template-columns:1fr 1fr;} .tile .cap{font-size:11px; padding:20px 8px 8px;} }
+
+
+  .badge{display:inline-block; margin-left:8px; padding:2px 8px; border:1px solid var(--gold); border-radius:100px; font-size:9.5px; letter-spacing:.1em; color:var(--gold);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .row5{grid-template-columns:repeat(5,1fr);}
+  .row5 .tile{aspect-ratio:1/1;}
+  .row5 .tile .cap{font-size:10.5px; padding:18px 6px 6px;}
+  .more{margin-top:18px;}
+  .span2{grid-column:span 2;}
+  .tile .cap b{display:block; font-weight:800; font-size:12.5px;}
+  .dipl .card h3{margin-bottom:4px;}
+  .dipl .card .by{font-size:12px; color:var(--blue); font-weight:600; margin-bottom:8px;}
+  .backlink{display:inline-block; margin-bottom:24px; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold);}
+  .intro{font-size:13px; color:var(--ink-dim); margin:-4px 0 16px; max-width:640px;}
+
+  /* GRID CARDS */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .card{background:var(--bg); padding:22px;}
+  .card h3{font-size:14.5px; font-weight:600; margin-bottom:8px;}
+  .card p{font-size:12.5px; color:var(--ink-dim);}
+  .tag-mini{font-weight:800; font-size:10.5px; letter-spacing:.1em; color:var(--gold); text-transform:uppercase; margin-bottom:10px; display:block;}
+
+  /* PLACEHOLDER CARD */
+  .placeholder{border:1px dashed var(--line); background:var(--bg2); display:flex; align-items:center; justify-content:center; min-height:120px; padding:20px; text-align:center;}
+  .placeholder span{font-size:12px; color:var(--ink-dim);}
+
+  /* SUBHEAD */
+  .subhead{font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin:36px 0 16px;}
+  .subhead:first-of-type{margin-top:0;}
+
+  /* DOCUMENTOS */
+  .doclist{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .doc{background:var(--bg); display:flex; justify-content:space-between; align-items:center; padding:16px 20px; text-decoration:none;}
+  .doc:hover{background:var(--bg2);}
+  .doc span.name{font-size:13.5px; font-weight:600;}
+  .doc span.meta{font-size:11px; color:var(--ink-dim);}
+  .doc .arrow{color:var(--gold); font-weight:800;}
+
+  .note{border:1px solid var(--line); background:var(--bg2); padding:18px 22px; font-size:13px; color:var(--ink-dim); margin-top:1px;}
+  .note b{color:var(--ink);}
+
+  footer{padding:40px 24px; text-align:center; font-size:12px; color:var(--ink-dim);}
+  footer a{color:var(--gold); text-decoration:none;}
+
+  @media(max-width:640px){
+    .grid2,.grid3{grid-template-columns:1fr;}
+    .g4{grid-template-columns:1fr 1fr;}
+    .row3,.row5{display:flex; overflow-x:auto; gap:8px; grid-template-columns:none;}
+    .row5 .tile{flex:0 0 160px;}
+    .row3 .tile{flex:0 0 230px;}
+    .span2{grid-column:auto;}
+    h1.title{font-size:27px;}
+    .tl-item{grid-template-columns:1fr; gap:6px;}
+    .hero{grid-template-columns:1fr;}
+    details.speakers ul{columns:1;}
+    .hero-photo{width:160px; height:200px;}
+  }
+
+  .gal3{grid-template-columns:repeat(3,1fr);}
+  @media(max-width:640px){.gal3{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:12px;right:14px;z-index:60;"><div class="langsw" aria-label="Language"><a href="galeria-wobi.html" hreflang="es">ES</a><a class="on" href="galeria-wobi-en.html" hreflang="en">EN</a></div></div>
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <a class="backlink" href="index-en.html#galeria">← Back to the portal</a>
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">Gallery</div>
+        <h2>WOBI · World Business Forum</h2>
+      </div>
+      <div class="sec-note">Tap a photo to see it larger.</div>
+    </div>
+    <p class="intro">Conversations and moments with World Business Forum and WOBI speakers, in Sydney, Madrid, Mexico and Milan.</p>
+    <div class="gal gal3">
+      <button class="tile" type="button" data-src="wobi-roubini-escenario.jpg" data-cap="Nouriel Roubini · Main stage · Sydney 2024"><img src="wobi-roubini-escenario.jpg" alt="Main stage of World Business Forum Sydney with the interview on screen" loading="lazy"><span class="cap"><b>Nouriel Roubini</b>Main stage · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-collins-escenario.jpg" data-cap="Marcus Collins · On stage · Sydney 2024"><img src="wobi-collins-escenario.jpg" alt="Chiarella in conversation with Marcus Collins on stage" loading="lazy"><span class="cap"><b>Marcus Collins</b>On stage · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-collins-lunch-1.jpg" data-cap="Marcus Collins · VIP Lunch · Sydney 2024"><img src="wobi-collins-lunch-1.jpg" alt="Chiarella with Marcus Collins before the VIP Lunch" loading="lazy"><span class="cap"><b>Marcus Collins</b>VIP Lunch · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-hamel.jpg" data-cap="Gary Hamel · On stage · Sydney 2024"><img src="wobi-hamel.jpg" alt="Chiarella with Gary Hamel" loading="lazy"><span class="cap"><b>Gary Hamel</b>On stage · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-chow.jpg" data-cap="Anne Chow · On stage · Sydney 2024"><img src="wobi-chow.jpg" alt="Chiarella with Anne Chow on stage" loading="lazy"><span class="cap"><b>Anne Chow</b>On stage · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-dirks.jpg" data-cap="Radhika Dirks · On stage · Sydney 2024"><img src="wobi-dirks.jpg" alt="Chiarella interviewing Radhika Dirks on stage" loading="lazy"><span class="cap"><b>Radhika Dirks</b>On stage · Sydney 2024</span></button>
+      <button class="tile" type="button" data-src="wobi-delgado.jpg" data-cap="JJ Delgado · World Business Forum Madrid · 2025"><img src="wobi-delgado.jpg" alt="Chiarella with JJ Delgado" loading="lazy"><span class="cap"><b>JJ Delgado</b>World Business Forum Madrid · 2025</span></button>
+      <button class="tile top" type="button" data-src="wobi-cuddy.jpg" data-cap="Amy Cuddy · Author of “Presence” · Mexico 2025"><img src="wobi-cuddy.jpg" alt="Chiarella with Amy Cuddy holding her book Presence" loading="lazy"><span class="cap"><b>Amy Cuddy</b>Author of “Presence” · Mexico 2025</span></button>
+      <button class="tile" type="button" data-src="wobi-roubini-mexico.jpg" data-cap="Nouriel Roubini · World Business Forum Madrid · 2025"><img src="wobi-roubini-mexico.jpg" alt="Chiarella with Nouriel Roubini on stage" loading="lazy"><span class="cap"><b>Nouriel Roubini</b>World Business Forum Madrid · 2025</span></button>
+      <button class="tile" type="button" data-src="wobi-wild.jpg" data-cap="Jason Wild · WOBI on AI &amp; Business Transformation · Milan 2025"><img src="wobi-wild.jpg" alt="Chiarella and Jason Wild on the WOBI Milan stage in front of the audience" loading="lazy"><span class="cap"><b>Jason Wild</b>WOBI on AI &amp; Business Transformation · Milan 2025</span></button>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <button class="p" type="button" aria-label="Previous">‹</button>
+  <img id="lbimg" src="" alt="">
+  <div class="lbcap" id="lbcap"></div>
+  <button class="n" type="button" aria-label="Next">›</button>
+</div>
+<script>
+(function(){
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile'));
+  var lb = document.getElementById('lb'), img = document.getElementById('lbimg'), cap = document.getElementById('lbcap');
+  var cur = 0;
+  function show(i){ cur = (i + tiles.length) % tiles.length; img.src = tiles[cur].dataset.src; img.alt = tiles[cur].querySelector('img').alt; cap.textContent = tiles[cur].dataset.cap; lb.classList.add('open'); }
+  function hide(){ lb.classList.remove('open'); img.src = ''; }
+  tiles.forEach(function(t, i){ t.addEventListener('click', function(){ show(i); }); });
+  lb.querySelector('.x').addEventListener('click', hide);
+  lb.querySelector('.p').addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.n').addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) hide(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+</script>
+</body>
+</html>
